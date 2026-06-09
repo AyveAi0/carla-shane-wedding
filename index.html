@@ -106,9 +106,13 @@
 
   .arch{ width:300px; max-width:78%; margin:6px auto 22px; display:block; filter:drop-shadow(0 6px 14px rgba(102,121,90,.18)); }
 
-  .greeting{ font-family:'Pinyon Script', cursive; font-size:40px; line-height:1; color:var(--rose3); margin:0 0 14px;
+  .greeting{ margin:0 0 16px; }
+  .greeting-pre{ display:block; font-family:'EB Garamond', serif; font-size:13px; letter-spacing:.36em;
+    text-transform:uppercase; color:var(--pink-deep); margin-bottom:4px; }
+  .greeting-name{ display:block; font-family:'Pinyon Script', cursive; font-size:46px; line-height:1.5;
+    white-space:nowrap; padding:6px 0; overflow:visible;
     background:linear-gradient(120deg, var(--rose-3) 0%, var(--rose-1) 45%, var(--rose-2) 60%, var(--rose-3) 100%);
-    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:var(--rose-3); }
 
   .intro{
     font-family:'EB Garamond', serif;
@@ -194,9 +198,77 @@
     *{ animation:none !important; }
     .reveal{ opacity:1; transform:none; }
   }
+  /* ===== envelope intro ===== */
+  html.has-env .reveal{ animation-play-state:paused; }
+  html.has-env.opened .reveal{ animation-play-state:running; }
+  .env-overlay{ position:fixed; inset:0; z-index:60; display:flex; align-items:center; justify-content:center;
+    background:
+      radial-gradient(120% 90% at 50% -10%, #FBEFEA 0%, transparent 55%),
+      radial-gradient(90% 70% at 12% 8%, rgba(231,199,196,.55) 0%, transparent 45%),
+      radial-gradient(90% 70% at 88% 92%, rgba(147,164,135,.40) 0%, transparent 45%),
+      linear-gradient(170deg, #F7EDE6 0%, #F2E5DA 48%, #EDE4D6 100%);
+    transition:opacity .9s ease, transform .9s ease; }
+  .env-overlay.gone{ opacity:0; transform:scale(1.08); pointer-events:none; }
+  .env-stage{ text-align:center; perspective:1400px; padding:20px; }
+  .ev-names{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:30px; color:var(--green-ink); margin-bottom:6px; }
+  .ev-sub{ font-family:'EB Garamond', serif; font-size:11px; letter-spacing:.4em; text-transform:uppercase; color:var(--pink-deep); margin-bottom:24px; }
+  .envelope{ position:relative; width:330px; max-width:82vw; height:222px; margin:0 auto; cursor:pointer; transform-style:preserve-3d; transition:transform .6s ease; }
+  .envelope:hover{ transform:translateY(-5px); }
+  .ev-back{ position:absolute; inset:0; border-radius:11px; border:1px solid rgba(182,132,118,.5);
+    background:linear-gradient(160deg,#f6ded7,#ead0c9);
+    box-shadow:0 36px 66px -26px rgba(102,121,90,.5), inset 0 1px 0 rgba(255,255,255,.6); }
+  .ev-back::before{ content:""; position:absolute; left:0; right:0; bottom:0; top:34%;
+    background:linear-gradient(160deg,#f0d5ce,#e4bfb7);
+    clip-path:polygon(0 0, 50% 66%, 100% 0, 100% 100%, 0 100%); border-radius:0 0 11px 11px; }
+  .ev-flap{ position:absolute; top:0; left:0; width:100%; height:60%;
+    background:linear-gradient(160deg,#f1d7d0,#e7c3bb);
+    clip-path:polygon(0 0, 100% 0, 50% 100%); transform-origin:top center; transform:rotateX(0deg);
+    backface-visibility:hidden; transition:transform 1s cubic-bezier(.6,.04,.2,1); z-index:4;
+    border-radius:11px 11px 0 0; }
+  .env-overlay.opening .ev-flap{ transform:rotateX(178deg); z-index:1; }
+  .ev-seal{ position:absolute; top:40%; left:50%; transform:translate(-50%,-50%); z-index:5;
+    width:60px; height:60px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #ecc8a4, #b9837a 72%);
+    box-shadow:0 5px 12px rgba(150,90,80,.45), inset 0 1px 2px rgba(255,255,255,.5);
+    display:flex; align-items:center; justify-content:center; color:#fff7ef;
+    font-family:'Cormorant Garamond', serif; font-style:italic; font-size:17px; line-height:1;
+    transition:opacity .4s ease, transform .4s ease; }
+  .env-overlay.opening .ev-seal{ opacity:0; transform:translate(-50%,-50%) scale(.55); }
+  .ev-hint{ margin-top:30px; font-family:'EB Garamond', serif; letter-spacing:.34em; text-transform:uppercase;
+    font-size:12px; color:var(--ink-soft); animation:pulseHint 2.2s ease-in-out infinite; }
+  .env-overlay.opening .ev-hint{ opacity:0; transition:opacity .3s; }
+  @keyframes pulseHint{ 0%,100%{opacity:.4} 50%{opacity:.95} }
+  /* music toggle */
+  .music-btn{ position:fixed; right:16px; bottom:16px; z-index:40; width:44px; height:44px; border-radius:50%;
+    border:1px solid rgba(201,154,120,.55); cursor:pointer; color:var(--rose-3);
+    background:linear-gradient(135deg,#FCF6EF,#F4E4D4);
+    box-shadow:0 8px 20px -10px rgba(182,132,118,.7); font-size:17px;
+    display:flex; align-items:center; justify-content:center; transition:transform .2s ease, opacity .3s ease; }
+  .music-btn:hover{ transform:scale(1.07); }
+  .music-btn.on{ background:linear-gradient(135deg,#EFD9C6,#E7C3A8); color:#8a5a52; }
+  @media (prefers-reduced-motion:reduce){ .env-overlay{ display:none; } }
 </style>
 </head>
 <body>
+  <div class="env-overlay" id="envOverlay">
+    <div class="env-stage">
+      <div class="ev-names">Carla &amp; Shane</div>
+      <div class="ev-sub">You're Invited</div>
+      <div class="envelope" id="envelope">
+        <div class="ev-back"></div>
+        <div class="ev-flap"></div>
+        <div class="ev-seal">C&amp;S</div>
+      </div>
+      <p class="ev-hint">Tap to open</p>
+    </div>
+  </div>
+
+  <audio id="bgMusic" loop preload="auto">
+    <!-- Add your song: upload a file named song.mp3 alongside this page, or change the src below -->
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+  <button class="music-btn" id="musicToggle" aria-label="Play or pause music" title="Music">&#9835;</button>
+
   <div class="card">
     <div class="frame"></div>
 
@@ -259,7 +331,10 @@
         </g>
       </svg>
 
-      <p class="greeting reveal" id="greeting" style="animation-delay:.1s; display:none;"></p>
+      <div class="greeting reveal" id="greeting" style="animation-delay:.1s; display:none;">
+        <span class="greeting-pre">Dear</span>
+        <span class="greeting-name" id="greetingName"></span>
+      </div>
 
       <p class="intro reveal" style="animation-delay:.15s">
         Together with their families, you are invited to wander into the
@@ -321,7 +396,7 @@
         to last a lifetime.
       </p>
       <p class="fund-label reveal" style="animation-delay:1.05s">Our Honeymoon Fund</p>
-      <p class="fund reveal" style="animation-delay:1.06s">Capitec · Savings · Acc <span class="v">1927489081</span> · Branch 470010 · Ref: your name</p>
+      <p class="fund reveal" style="animation-delay:1.06s">SH Lossl · Capitec · Savings · Acc <span class="v">1927489081</span> · Branch 470010 · Ref: your name</p>
 
       <div class="divider reveal" style="animation-delay:1.08s">
         <span class="line"></span>
@@ -418,8 +493,23 @@
 
     if(guest){
       const g = document.getElementById('greeting');
-      g.textContent = 'Dear ' + guest + ',';
+      const nameEl = document.getElementById('greetingName');
+      nameEl.textContent = guest + ',';
       g.style.display = 'block';
+
+      // shrink the name until it fits on one line (handles long names without clipping)
+      function fitName(){
+        let size = 46;
+        nameEl.style.fontSize = size + 'px';
+        const avail = g.clientWidth - 6;
+        while(nameEl.scrollWidth > avail && size > 22){
+          size -= 1;
+          nameEl.style.fontSize = size + 'px';
+        }
+      }
+      fitName();
+      if(document.fonts && document.fonts.ready){ document.fonts.ready.then(fitName); }
+      window.addEventListener('resize', fitName);
     }
 
     const subject = 'RSVP \u00B7 Carla & Shane';
@@ -435,6 +525,7 @@
       '\u2014\u2014\u2014\n' +
       'Honeymoon fund (for anyone who would like to contribute in lieu of a gift):\n' +
       'Bank: Capitec\n' +
+      'Account name: SH Lossl\n' +
       'Account no: 1927489081\n' +
       'Account type: Savings\n' +
       'Branch: 470010\n' +
@@ -444,6 +535,36 @@
                  '?subject=' + encodeURIComponent(subject) +
                  '&body=' + encodeURIComponent(body);
     document.getElementById('rsvpBtn').setAttribute('href', href);
+  })();
+</script>
+<script>
+  // ---- envelope intro + background music ----
+  (function(){
+    const root    = document.documentElement;
+    const overlay = document.getElementById('envOverlay');
+    const audio   = document.getElementById('bgMusic');
+    const mBtn    = document.getElementById('musicToggle');
+
+    function setMusic(on){
+      if(!audio) return;
+      if(on){ audio.play().then(()=>{ mBtn && mBtn.classList.add('on'); }).catch(()=>{}); }
+      else  { audio.pause(); mBtn && mBtn.classList.remove('on'); }
+    }
+    if(mBtn) mBtn.addEventListener('click', ()=> setMusic(audio && audio.paused));
+
+    if(overlay){
+      root.classList.add('has-env');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function openInvite(){
+        if(overlay.classList.contains('opening')) return;
+        overlay.classList.add('opening');     // flap lifts, seal fades
+        setMusic(true);                        // user tap = allowed to start audio
+        setTimeout(()=>{ overlay.classList.add('gone'); root.classList.add('opened'); }, 820);
+        setTimeout(()=>{ overlay.parentNode && overlay.parentNode.removeChild(overlay); }, 1800);
+      }
+      if(reduce){ root.classList.add('opened'); overlay.parentNode && overlay.parentNode.removeChild(overlay); }
+      else { overlay.addEventListener('click', openInvite); }
+    }
   })();
 </script>
 </body>
