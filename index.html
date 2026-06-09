@@ -123,12 +123,12 @@
   .names{ margin:26px 0 6px; }
   .name{
     font-family:'Cormorant Garamond', serif; font-weight:400; font-style:italic;
-    font-size:84px; line-height:.96; letter-spacing:.01em;
+    font-size:92px; line-height:.96; letter-spacing:.01em;
     color:var(--green-ink);
     text-shadow:0 1px 0 rgba(255,255,255,.6);
   }
   .amp{
-    font-family:'Pinyon Script', cursive; font-size:72px; line-height:.6;
+    font-family:'Pinyon Script', cursive; font-size:78px; line-height:.6;
     display:block; margin:6px 0;
     background:linear-gradient(120deg, var(--rose-3) 0%, var(--rose-1) 35%, var(--rose-2) 55%, var(--rose-3) 100%);
     -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
@@ -186,8 +186,8 @@
 
   @media (max-width:560px){
     .card{ padding:60px 28px 46px; }
-    .name{ font-size:60px; }
-    .amp{ font-size:54px; }
+    .name{ font-size:66px; }
+    .amp{ font-size:58px; }
     .date{ gap:14px; }
     .date .big{ font-size:42px; }
     .date .mid{ font-size:24px; }
@@ -199,8 +199,7 @@
     .reveal{ opacity:1; transform:none; }
   }
   /* ===== envelope intro ===== */
-  html.has-env .reveal{ animation-play-state:paused; }
-  html.has-env.opened .reveal{ animation-play-state:running; }
+  /* envelope intro (reveals always render; overlay simply covers them until opened) */
   .env-overlay{ position:fixed; inset:0; z-index:60; display:flex; align-items:center; justify-content:center;
     background:
       radial-gradient(120% 90% at 50% -10%, #FBEFEA 0%, transparent 55%),
