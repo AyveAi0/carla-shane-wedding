@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Carla &amp; Shane — WhatsApp Send Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FBF4EE;--pink-soft:#E7C7C4;--pink-deep:#C2807E;--rose3:#B68476;--rose1:#C99A78;
+    --sage:#93A487;--dpink:#A2666A;--ink:#4A3F3B;--ink-soft:#6E5E58;--wa:#1FA855;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'EB Garamond',serif;color:var(--ink);background:linear-gradient(180deg,#FBF4EE,#F4E8DD);padding:28px 16px 60px;}
+  .wrap{max-width:920px;margin:0 auto;}
+  h1{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:40px;color:var(--dpink);text-align:center;}
+  .sub{text-align:center;color:var(--ink-soft);margin:4px 0 22px;letter-spacing:.04em;}
+  .panel{background:#FCF7F2;border:1px solid rgba(182,132,118,.3);border-radius:14px;padding:18px 18px 14px;margin-bottom:20px;box-shadow:0 10px 30px -22px rgba(102,121,90,.5);}
+  label{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:6px;}
+  input[type=text]{width:100%;padding:12px 14px;border:1px solid rgba(182,132,118,.45);border-radius:9px;font-family:'EB Garamond',serif;font-size:16px;color:var(--ink);background:#fff;}
+  .hint{font-size:13px;color:var(--ink-soft);margin-top:7px;line-height:1.5;}
+  .hint code{background:#F1E5D8;padding:1px 6px;border-radius:5px;font-size:12px;}
+  .grp{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--sage);margin:22px 4px 8px;border-bottom:1px solid rgba(147,164,135,.3);padding-bottom:5px;}
+  .row{display:flex;align-items:center;gap:10px;padding:9px 4px;border-bottom:1px solid rgba(182,132,118,.16);flex-wrap:wrap;}
+  .name{flex:0 0 180px;font-size:17px;color:var(--dpink);}
+  .url{flex:1 1 260px;min-width:200px;font-size:12.5px;color:var(--ink-soft);background:#fff;border:1px solid rgba(182,132,118,.3);border-radius:7px;padding:8px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .btns{display:flex;gap:7px;flex:0 0 auto;}
+  button,a.act{font-family:'EB Garamond',serif;font-size:13px;letter-spacing:.04em;border-radius:8px;padding:9px 13px;cursor:pointer;border:1px solid transparent;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
+  .copy{background:#F1E5D8;color:var(--rose3);border-color:rgba(182,132,118,.4);}
+  .copy:hover{background:#E9D9C8;}
+  .share{background:var(--wa);color:#fff;}
+  .share:hover{filter:brightness(.95);}
+  .share svg{width:15px;height:15px;}
+  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px;}
+  .count{margin-left:auto;color:var(--ink-soft);font-size:14px;}
+  .msgbox{width:100%;min-height:64px;padding:11px 13px;border:1px solid rgba(182,132,118,.45);border-radius:9px;font-family:'EB Garamond',serif;font-size:15px;color:var(--ink);background:#fff;resize:vertical;margin-top:4px;}
+  .ok{color:var(--wa);font-size:12px;margin-left:6px;}
+  .filterbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;}
+  .fbtn{font-family:'EB Garamond',serif;font-size:13px;letter-spacing:.06em;padding:8px 14px;border-radius:20px;border:1px solid rgba(182,132,118,.4);background:#FCF7F2;color:var(--rose3);cursor:pointer;}
+  .fbtn.active{background:var(--dpink);color:#fff;border-color:var(--dpink);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Carla &amp; Shane</h1>
+  <p class="sub">WhatsApp send sheet · 76 guests</p>
+
+  <div class="panel">
+    <label>1 · Where the invitation is hosted (its web link)</label>
+    <input id="base" type="text" placeholder="https://ayveai0.github.io/carla-shane-wedding/" value="https://ayveai0.github.io/carla-shane-wedding/">
+    <p class="hint">Upload <code>carla-shane-invitation.html</code> to any web host (your AYVE.AI hosting, Netlify Drop, or GitHub Pages), then paste its address above. Each guest link below adds their name automatically, e.g. <code>…invitation.html?guest=Candice%20%26%20Joe</code>. The RSVP button on that page opens the guest's mail app addressed to you.</p>
+
+    <label style="margin-top:16px">2 · WhatsApp message (optional — edit to taste)</label>
+    <textarea id="tpl" class="msgbox">Hi {name}! 💍 You're invited to Carla & Shane's wedding. Tap to open your invitation and RSVP: {url}</textarea>
+    <p class="hint"><b>{name}</b> and <b>{url}</b> are filled in for each guest. “Share” opens WhatsApp with the message ready — just pick the contact and send.</p>
+  </div>
+
+  <div class="filterbar" id="filterbar">
+    <button class="fbtn active" data-f="all">Everyone (76)</button>
+    <button class="fbtn" data-f="Wedding">Wedding</button>
+    <button class="fbtn" data-f="Family">Family</button>
+    <button class="fbtn" data-f="Shane">Shane's</button>
+    <button class="fbtn" data-f="Paul">Paul's</button>
+    <button class="fbtn" data-f="Melodie">Melodie's</button>
+  </div>
+  <div id="list"></div>
+</div>
+
+<script>
+  const GUESTS = [["Wedding","Candice & Joe"],["Wedding","Sam & Partner"],["Wedding","Calli & David"],["Wedding","Antonette & Mark"],["Wedding","Kim & Partner"],["Wedding","Danida & Partner"],["Wedding","Uyanda & Partner"],["Wedding","Nats & Partner"],["Wedding","Anele & Partner"],["Wedding","Ally & Partner"],["Wedding","Natasha & Partner"],["Wedding","Oshie & Partner"],["Wedding","Anat & Amy"],["Wedding","Marc & Roger"],["Wedding","Nikki & Don"],["Wedding","Taryn"],["Wedding","Shannon & Marc"],["Wedding","Kimmy & Partner"],["Wedding","Candy & Chase"],["Wedding","Luis & Partner"],["Wedding","Nikki & Marc"],["Family","Melodie & Partner"],["Family","Paul & Asna"],["Family","Justin & Partner"],["Family","Gunter & Deseree"],["Family","Sharlene"],["Family","Auntie Bernie"],["Family","Roy"],["Family","Wetes"],["Shane","Mom & Dad"],["Shane","Chris & Partner"],["Shane","Jared & Partner"],["Shane","Elio & Jess"],["Shane","Brad & Partner"],["Shane","Sonny & Tessa"],["Shane","Neil & Justine"],["Shane","Ronaldo & Partner"],["Shane","Michael & Carla"],["Shane","Matthew & Partner"],["Shane","Gunter-Mark & Clarice"],["Shane","Uncle Ed & Aunty Irene"],["Shane","Warren & Megan"],["Shane","Paul & Janet"],["Shane","Don & Ariella"],["Shane","Gord & Partner"],["Shane","Angelo & Partner"],["Shane","John & Partner"],["Shane","Kgolo & Partner"],["Paul","Howard & Monique"],["Paul","Elaine & Kim"],["Paul","Brian & Sharlene"],["Melodie","Melodie & Brian"],["Melodie","Denise & Michael"],["Melodie","Marian & Michael"],["Melodie","Pickles & Enza"],["Melodie","Saul & Sasha"],["Melodie","Jill & Selwyn"],["Melodie","Debbie & Alan"],["Melodie","Ismay & David"],["Melodie","Larry & Helen"],["Melodie","Bernise"],["Melodie","Les Gritzman"],["Melodie","Lauren & Dean"],["Melodie","Jenny Clegg"],["Melodie","Yvonne Cuyler Wilson"],["Melodie","Marisa Schuller"],["Melodie","Ilana Ackerman"],["Melodie","Zahava Fissman"],["Melodie","Terry Levine"],["Melodie","Arye & Grant"],["Melodie","Janice & Kenny"],["Melodie","Irwin & Susan"],["Melodie","Brendon & Jill"],["Melodie","Ally & Rickey"],["Melodie","Barbara & Richard"],["Melodie","Rina"]];
+
+  const GROUP_TITLES = {Wedding:"Wedding List", Family:"Family", Shane:"Shane's List", Paul:"Paul's List", Melodie:"Melodie's List"};
+  const base = document.getElementById('base');
+  const tpl  = document.getElementById('tpl');
+  const list = document.getElementById('list');
+
+  function buildUrl(name){
+    let b = base.value.trim();
+    const sep = b.includes('?') ? '&' : '?';
+    return b + sep + 'guest=' + encodeURIComponent(name);
+  }
+  function waLink(name){
+    const url = buildUrl(name);
+    const msg = tpl.value.replace(/{name}/g, name).replace(/{url}/g, url);
+    return 'https://wa.me/?text=' + encodeURIComponent(msg);
+  }
+  function render(){
+    list.innerHTML = '';
+    let last = null;
+    GUESTS.forEach(([grp,name])=>{
+      if(grp!==last){ last=grp; const h=document.createElement('div'); h.className='grp'; h.dataset.g=grp; h.textContent=GROUP_TITLES[grp]||grp; list.appendChild(h); }
+      const url = buildUrl(name);
+      const row = document.createElement('div'); row.className='row'; row.dataset.g=grp;
+      row.innerHTML =
+        '<div class="name">'+name+'</div>'+
+        '<div class="url" title="'+url+'">'+url+'</div>'+
+        '<div class="btns">'+
+          '<button class="copy">Copy link</button>'+
+          '<a class="act share" target="_blank" rel="noopener" href="'+waLink(name)+'">'+
+            '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.2 1.1-1.7 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.3-.3.5l-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.9.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg>'+
+            'Share</a>'+
+        '</div>';
+      row.querySelector('.copy').addEventListener('click', e=>{
+        navigator.clipboard.writeText(url).then(()=>{ e.target.textContent='Copied ✓'; setTimeout(()=>e.target.textContent='Copy link',1400); })
+        .catch(()=>{ const t=document.createElement('textarea'); t.value=url; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); e.target.textContent='Copied ✓'; setTimeout(()=>e.target.textContent='Copy link',1400); });
+      });
+      list.appendChild(row);
+    });
+  }
+  function applyFilter(g){
+    document.querySelectorAll('#list [data-g]').forEach(el=>{ el.style.display = (g==='all'||el.dataset.g===g)?'':'none'; });
+    document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('active', b.dataset.f===g));
+  }
+  document.getElementById('filterbar').addEventListener('click', e=>{ if(e.target.classList.contains('fbtn')) applyFilter(e.target.dataset.f); });
+  base.addEventListener('input', ()=>{ render(); });
+  base.addEventListener('input', render);
+  tpl.addEventListener('input', render);
+  render();
+</script>
+</body>
+</html>
