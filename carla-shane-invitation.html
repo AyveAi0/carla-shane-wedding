@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carla & Shane · You're Invited</title>
+<meta property="og:title" content="Carla &amp; Shane — You're Invited">
+<meta property="og:description" content="Wander into the enchanted Sandton forest · 23 September 2026 · Via Venetto, Acorn Lane. Tap to view your invitation and RSVP.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#E7C7C4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Palette: dusty pink · rose gold · muted greens */
+    --cream:        #FBF4EE;
+    --cream-deep:   #F3E7DC;
+    --pink-soft:    #E7C7C4;
+    --pink:         #D6A5A2;
+    --pink-deep:    #C2807E;
+    --rose-1:       #C99A78;
+    --rose-2:       #E4C2A4;
+    --rose-3:       #B68476;
+    --sage:         #93A487;
+    --sage-deep:    #66795A;
+    --green-ink:    #A2666A;  /* dusty pink (was dark green) */
+    --ink:          #4A3F3B;
+    --ink-soft:     #6E5E58;
+    --glow:         #F6E2C0;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html,body{ min-height:100%; }
+
+  body{
+    font-family:'EB Garamond', serif;
+    color:var(--ink);
+    background:
+      radial-gradient(120% 90% at 50% -10%, #FBEFEA 0%, transparent 55%),
+      radial-gradient(90% 70% at 12% 8%,  rgba(231,199,196,.55) 0%, transparent 45%),
+      radial-gradient(90% 70% at 88% 92%, rgba(147,164,135,.40) 0%, transparent 45%),
+      linear-gradient(170deg, #F7EDE6 0%, #F2E5DA 48%, #EDE4D6 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 18px;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ===== The card ===== */
+  .card{
+    position:relative;
+    width:100%;
+    max-width:660px;
+    background:
+      radial-gradient(135% 80% at 50% 0%, rgba(246,226,192,.45) 0%, transparent 50%),
+      linear-gradient(180deg, #FCF6F1 0%, #FBF3EC 55%, #F8EFE7 100%);
+    border-radius:6px;
+    padding:74px 56px 60px;
+    overflow:hidden;
+    box-shadow:
+      0 1px 0 rgba(255,255,255,.7) inset,
+      0 40px 80px -30px rgba(102,121,90,.35),
+      0 18px 40px -24px rgba(194,128,126,.35);
+    isolation:isolate;
+  }
+
+  /* fine double frame */
+  .frame{ position:absolute; inset:14px; border:1px solid rgba(182,132,118,.45); border-radius:3px; pointer-events:none; z-index:6;}
+  .frame::after{ content:""; position:absolute; inset:5px; border:1px solid rgba(147,164,135,.30); border-radius:2px;}
+
+  /* grain / paper texture */
+  .card::after{
+    content:""; position:absolute; inset:0; z-index:7; pointer-events:none; opacity:.05; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* corner sprigs */
+  .corner{ position:absolute; width:108px; height:108px; z-index:5; opacity:.85;}
+  .corner svg{ width:100%; height:100%; }
+  .corner.tl{ top:10px; left:10px; }
+  .corner.tr{ top:10px; right:10px; transform:scaleX(-1); }
+  .corner.bl{ bottom:10px; left:10px; transform:scaleY(-1); }
+  .corner.br{ bottom:10px; right:10px; transform:scale(-1,-1); }
+
+  /* ===== fairy lights ===== */
+  .lights{ position:absolute; top:0; left:0; right:0; height:130px; z-index:4; pointer-events:none;}
+  .lights .bulb{ filter:drop-shadow(0 0 5px var(--glow)); transform-origin:top center; animation:sway 6s ease-in-out infinite;}
+  .lights .halo{ animation:twinkle 3.4s ease-in-out infinite;}
+  @keyframes twinkle{ 0%,100%{opacity:.35;} 50%{opacity:1;} }
+  @keyframes sway{ 0%,100%{transform:rotate(-2deg);} 50%{transform:rotate(2deg);} }
+
+  /* ===== fireflies & sparkles ===== */
+  .sky{ position:absolute; inset:0; z-index:3; pointer-events:none; overflow:hidden;}
+  .firefly{ position:absolute; width:5px; height:5px; border-radius:50%;
+    background:radial-gradient(circle, #FBE7B8 0%, rgba(246,226,192,.6) 40%, transparent 70%);
+    box-shadow:0 0 8px 2px rgba(246,226,192,.7);
+  }
+  .spark{ position:absolute; color:var(--rose-2); animation:sparkle 4s ease-in-out infinite;}
+  @keyframes sparkle{ 0%,100%{opacity:0; transform:scale(.4) rotate(0deg);} 50%{opacity:.9; transform:scale(1) rotate(45deg);} }
+
+  /* ===== content ===== */
+  .content{ position:relative; z-index:8; text-align:center; }
+
+  .arch{ width:300px; max-width:78%; margin:6px auto 22px; display:block; filter:drop-shadow(0 6px 14px rgba(102,121,90,.18)); }
+
+  .greeting{ font-family:'Pinyon Script', cursive; font-size:40px; line-height:1; color:var(--rose3); margin:0 0 14px;
+    background:linear-gradient(120deg, var(--rose-3) 0%, var(--rose-1) 45%, var(--rose-2) 60%, var(--rose-3) 100%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+
+  .intro{
+    font-family:'EB Garamond', serif;
+    font-size:13px; letter-spacing:.28em; text-transform:uppercase;
+    color:var(--ink-soft); line-height:2; max-width:430px; margin:0 auto;
+  }
+
+  .names{ margin:26px 0 6px; }
+  .name{
+    font-family:'Cormorant Garamond', serif; font-weight:400; font-style:italic;
+    font-size:84px; line-height:.96; letter-spacing:.01em;
+    color:var(--green-ink);
+    text-shadow:0 1px 0 rgba(255,255,255,.6);
+  }
+  .amp{
+    font-family:'Pinyon Script', cursive; font-size:72px; line-height:.6;
+    display:block; margin:6px 0;
+    background:linear-gradient(120deg, var(--rose-3) 0%, var(--rose-1) 35%, var(--rose-2) 55%, var(--rose-3) 100%);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 1px 1px rgba(182,132,118,.25));
+  }
+  .tagline{
+    font-family:'EB Garamond', serif; font-size:14px; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--pink-deep); margin-top:14px;
+  }
+
+  /* divider with sprig */
+  .divider{ display:flex; align-items:center; justify-content:center; gap:14px; margin:30px auto; max-width:320px;}
+  .divider .line{ flex:1; height:1px; background:linear-gradient(90deg, transparent, rgba(182,132,118,.6), transparent);}
+  .divider svg{ flex:none; }
+
+  /* date block */
+  .date{ display:flex; align-items:center; justify-content:center; gap:22px; margin:6px 0 4px;}
+  .date .big{ font-family:'Cormorant Garamond', serif; font-weight:500; font-size:56px; color:var(--rose-3); line-height:1;}
+  .date .mid{ font-family:'Cormorant Garamond', serif; font-style:italic; font-weight:400; font-size:30px; color:var(--green-ink);}
+  .date .sub{ font-size:11px; letter-spacing:.34em; text-transform:uppercase; color:var(--ink-soft); margin-top:7px;}
+  .holiday{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:18px; color:var(--sage-deep); max-width:none; margin:8px auto 0; line-height:1.4;}
+
+  .label{ font-size:12px; letter-spacing:.34em; text-transform:uppercase; color:var(--pink-deep); }
+  .venue{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:30px; color:var(--green-ink); margin:8px 0 6px; display:inline-flex; align-items:center; gap:12px;}
+  .venue .dot{ width:8px; height:8px; border-radius:50%; background:var(--sage); box-shadow:0 0 0 4px rgba(147,164,135,.22);}
+  .reception{ font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--ink-soft); margin-top:6px;}
+  .address{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:17px; color:var(--ink-soft); margin-top:3px; letter-spacing:.01em;}
+  .gift{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:18px; line-height:1.55; color:var(--ink-soft); max-width:470px; margin:10px auto 0;}
+  .fund-label{ font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--pink-deep); margin-top:14px;}
+  .fund{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:17px; color:var(--ink-soft); margin-top:3px;}
+  .fund .v{ font-style:normal; color:var(--rose-3);}
+
+  .rsvp-note{ font-size:12.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-soft); line-height:1.95; max-width:490px; margin:0 auto 26px;}
+
+  .btn{
+    --b:linear-gradient(135deg, #FCF6EF 0%, #F4E4D4 100%);
+    display:inline-flex; align-items:center; gap:11px;
+    font-family:'EB Garamond', serif; font-size:13px; letter-spacing:.26em; text-transform:uppercase;
+    color:var(--rose-3); text-decoration:none;
+    padding:15px 34px; border-radius:40px;
+    background:var(--b);
+    border:1px solid rgba(201,154,120,.55);
+    box-shadow:0 10px 26px -12px rgba(182,132,118,.7), 0 0 0 4px rgba(252,246,239,.5), inset 0 1px 0 rgba(255,255,255,.8);
+    transition:transform .35s ease, box-shadow .35s ease;
+    position:relative;
+  }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 16px 32px -12px rgba(182,132,118,.85), 0 0 24px rgba(246,226,192,.8), inset 0 1px 0 rgba(255,255,255,.9);}
+  .btn svg{ width:15px; height:15px; }
+  .rsvp-alt{ font-family:'Cormorant Garamond', serif; font-style:italic; font-size:16px; color:var(--ink-soft); margin-top:18px;}
+  .rsvp-alt a{ color:var(--rose-3); text-decoration:none; }
+
+  /* load reveal */
+  .reveal{ opacity:0; transform:translateY(14px); animation:rise .9s cubic-bezier(.2,.7,.3,1) forwards; }
+  @keyframes rise{ to{ opacity:1; transform:none; } }
+
+  @media (max-width:560px){
+    .card{ padding:60px 28px 46px; }
+    .name{ font-size:60px; }
+    .amp{ font-size:54px; }
+    .date{ gap:14px; }
+    .date .big{ font-size:42px; }
+    .date .mid{ font-size:24px; }
+    .intro,.rsvp-note{ font-size:11.5px; letter-spacing:.2em; }
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{ animation:none !important; }
+    .reveal{ opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="frame"></div>
+
+    <!-- corner sprigs -->
+    <div class="corner tl">
+      <svg viewBox="0 0 120 120" fill="none">
+        <path d="M8 8 C40 20 62 44 78 80" stroke="#93A487" stroke-width="1.4" stroke-linecap="round"/>
+        <g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round">
+          <path d="M22 18 q12 -8 22 -4 q-8 8 -22 4"/>
+          <path d="M36 34 q12 -8 22 -4 q-8 8 -22 4"/>
+          <path d="M50 52 q12 -8 22 -4 q-8 8 -22 4"/>
+          <path d="M18 30 q-9 4 -10 16 q10 -3 10 -16"/>
+          <path d="M30 48 q-9 4 -10 16 q10 -3 10 -16"/>
+        </g>
+        <circle cx="84" cy="86" r="3" fill="#C99A78"/>
+        <path d="M70 78 l3 5 M62 70 l4 3" stroke="#C99A78" stroke-width="1.2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="corner tr"><svg viewBox="0 0 120 120" fill="none"><path d="M8 8 C40 20 62 44 78 80" stroke="#93A487" stroke-width="1.4" stroke-linecap="round"/><g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round"><path d="M22 18 q12 -8 22 -4 q-8 8 -22 4"/><path d="M36 34 q12 -8 22 -4 q-8 8 -22 4"/><path d="M50 52 q12 -8 22 -4 q-8 8 -22 4"/></g><circle cx="84" cy="86" r="3" fill="#C99A78"/></svg></div>
+    <div class="corner bl"><svg viewBox="0 0 120 120" fill="none"><path d="M8 8 C40 20 62 44 78 80" stroke="#93A487" stroke-width="1.4" stroke-linecap="round"/><g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round"><path d="M22 18 q12 -8 22 -4 q-8 8 -22 4"/><path d="M36 34 q12 -8 22 -4 q-8 8 -22 4"/><path d="M50 52 q12 -8 22 -4 q-8 8 -22 4"/></g><circle cx="84" cy="86" r="3" fill="#C99A78"/></svg></div>
+    <div class="corner br"><svg viewBox="0 0 120 120" fill="none"><path d="M8 8 C40 20 62 44 78 80" stroke="#93A487" stroke-width="1.4" stroke-linecap="round"/><g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round"><path d="M22 18 q12 -8 22 -4 q-8 8 -22 4"/><path d="M36 34 q12 -8 22 -4 q-8 8 -22 4"/><path d="M50 52 q12 -8 22 -4 q-8 8 -22 4"/></g><circle cx="84" cy="86" r="3" fill="#C99A78"/></svg></div>
+
+    <!-- fairy lights -->
+    <svg class="lights" viewBox="0 0 660 130" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-10 26 C120 70 220 70 330 44 C440 18 540 18 670 56" fill="none" stroke="#B68476" stroke-width="1" opacity=".55"/>
+      <g id="bulbs"></g>
+    </svg>
+
+    <!-- fireflies + sparkles -->
+    <div class="sky" id="sky" aria-hidden="true"></div>
+
+    <div class="content">
+      <!-- enchanted arch -->
+      <svg class="arch reveal" style="animation-delay:.05s" viewBox="0 0 300 150" fill="none" aria-hidden="true">
+        <path d="M30 140 C40 70 110 28 150 28 C190 28 260 70 270 140" stroke="#93A487" stroke-width="1.5" stroke-linecap="round"/>
+        <g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round" fill="none">
+          <path d="M60 96 q14 -12 28 -8 q-9 12 -28 8"/>
+          <path d="M84 70 q15 -11 29 -6 q-10 11 -29 6"/>
+          <path d="M120 48 q16 -9 30 -2 q-11 9 -30 2"/>
+          <path d="M180 48 q-16 -9 -30 -2 q11 9 30 2"/>
+          <path d="M216 70 q-15 -11 -29 -6 q10 11 29 6"/>
+          <path d="M240 96 q-14 -12 -28 -8 q9 12 28 8"/>
+        </g>
+        <!-- hanging lanterns -->
+        <g stroke="#C99A78" stroke-width="1">
+          <line x1="110" y1="40" x2="110" y2="58"/>
+          <line x1="150" y1="30" x2="150" y2="50"/>
+          <line x1="190" y1="40" x2="190" y2="58"/>
+        </g>
+        <circle cx="110" cy="62" r="4.5" fill="#F6E2C0"/>
+        <circle cx="150" cy="54" r="5.5" fill="#F6E2C0"/>
+        <circle cx="190" cy="62" r="4.5" fill="#F6E2C0"/>
+        <circle cx="110" cy="62" r="9" fill="#F6E2C0" opacity=".25"/>
+        <circle cx="150" cy="54" r="11" fill="#F6E2C0" opacity=".28"/>
+        <circle cx="190" cy="62" r="9" fill="#F6E2C0" opacity=".25"/>
+        <!-- tiny mushrooms at base -->
+        <g>
+          <path d="M44 140 q6 -9 12 0 z" fill="#D6A5A2"/><rect x="48" y="139" width="4" height="6" rx="1.5" fill="#E7C7C4"/>
+          <path d="M250 140 q6 -9 12 0 z" fill="#D6A5A2"/><rect x="254" y="139" width="4" height="6" rx="1.5" fill="#E7C7C4"/>
+        </g>
+      </svg>
+
+      <p class="greeting reveal" id="greeting" style="animation-delay:.1s; display:none;"></p>
+
+      <p class="intro reveal" style="animation-delay:.15s">
+        Together with their families, you are invited to wander into the
+        enchanted Sandton forest and witness the marriage of
+      </p>
+
+      <div class="names">
+        <div class="name reveal" style="animation-delay:.28s">Carla</div>
+        <span class="amp reveal" style="animation-delay:.4s">&amp;</span>
+        <div class="name reveal" style="animation-delay:.52s">Shane</div>
+      </div>
+      <p class="tagline reveal" style="animation-delay:.6s">are getting married</p>
+
+      <div class="divider reveal" style="animation-delay:.66s">
+        <span class="line"></span>
+        <svg width="26" height="14" viewBox="0 0 26 14" fill="none"><path d="M13 1 C9 5 4 6 1 7 C4 8 9 9 13 13 C17 9 22 8 25 7 C22 6 17 5 13 1Z" fill="#C99A78" opacity=".85"/></svg>
+        <span class="line"></span>
+      </div>
+
+      <div class="date reveal" style="animation-delay:.72s">
+        <div>
+          <div class="big">23</div>
+          <div class="sub">Wednesday</div>
+        </div>
+        <div>
+          <div class="mid">September</div>
+          <div class="sub">2026</div>
+        </div>
+        <div>
+          <div class="big">3pm</div>
+          <div class="sub">Ceremony</div>
+        </div>
+      </div>
+      <p class="holiday reveal" style="animation-delay:.78s">The 24th is a public holiday&nbsp;— stay, dance, and linger a little longer</p>
+
+      <div class="divider reveal" style="animation-delay:.82s">
+        <span class="line"></span>
+        <svg width="26" height="14" viewBox="0 0 26 14" fill="none"><path d="M13 1 C9 5 4 6 1 7 C4 8 9 9 13 13 C17 9 22 8 25 7 C22 6 17 5 13 1Z" fill="#93A487" opacity=".8"/></svg>
+        <span class="line"></span>
+      </div>
+
+      <p class="label reveal" style="animation-delay:.86s">The Gathering</p>
+      <div class="venue reveal" style="animation-delay:.9s"><span class="dot"></span>Via Venetto · Acorn Lane</div>
+      <p class="address reveal" style="animation-delay:.92s">61 Rivonia Road, Sandhurst, Sandton</p>
+      <p class="reception reveal" style="animation-delay:.94s">Reception to follow beneath the fairy lights</p>
+
+      <div class="divider reveal" style="animation-delay:.98s">
+        <span class="line"></span>
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M9 13 C9 8 4 5 4 5 M9 13 C9 8 14 5 14 5 M9 13 V3" stroke="#C99A78" stroke-width="1.2" stroke-linecap="round"/><circle cx="9" cy="2.5" r="2.2" fill="#E4C2A4"/></svg>
+        <span class="line"></span>
+      </div>
+
+      <p class="label reveal" style="animation-delay:1.0s">A Note on Gifts</p>
+      <p class="gift reveal" style="animation-delay:1.04s">
+        Your presence at our wedding is the greatest gift we could ask for. As we have already
+        been blessed with a home filled with everything we need, we kindly request no boxed gifts.
+        Should you wish to celebrate with a gift, a contribution towards our honeymoon fund would
+        be sincerely appreciated as we begin this exciting new chapter together and create memories
+        to last a lifetime.
+      </p>
+
+      <div class="divider reveal" style="animation-delay:1.08s">
+        <span class="line"></span>
+        <svg width="26" height="14" viewBox="0 0 26 14" fill="none"><path d="M13 1 C9 5 4 6 1 7 C4 8 9 9 13 13 C17 9 22 8 25 7 C22 6 17 5 13 1Z" fill="#93A487" opacity=".8"/></svg>
+        <span class="line"></span>
+      </div>
+
+      <p class="rsvp-note reveal" style="animation-delay:1.12s">
+        Kindly reply by the first of July, and let us know of any dietary requirements so we can cater for you.<br>We can't wait to celebrate with you
+      </p>
+
+      <a class="btn reveal" id="rsvpBtn" style="animation-delay:1.18s" href="mailto:?subject=RSVP%20%C2%B7%20Carla%20%26%20Shane">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        RSVP by Email
+      </a>
+      <p class="rsvp-alt reveal" style="animation-delay:1.24s">or simply email <a href="mailto:carlaandshanewed@gmail.com">carlaandshanewed@gmail.com</a></p>
+    </div>
+  </div>
+
+<script>
+  // ---- fairy lights along the string ----
+  (function(){
+    const g = document.getElementById('bulbs');
+    const N = 16;
+    function y(x){ // matches the SVG curve roughly
+      const t = x/660;
+      return 26 + Math.sin(t*Math.PI)*38 - (t*t*-22) + (t>0.5? (t-0.5)*60 : 0);
+    }
+    for(let i=0;i<N;i++){
+      const x = 12 + i*(636/(N-1));
+      // sample curve: cubic approximation
+      const t = i/(N-1);
+      const cy = 26 + (-Math.pow(t-0.5,2)*1 + 0.5)*0; // placeholder
+      const yy = 44 + Math.sin(t*Math.PI)*26 - Math.pow(Math.abs(t-0.5)*2,2)*6 + (t>0.62?(t-0.62)*70:0);
+      const halo = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      halo.setAttribute('class','halo'); halo.setAttribute('cx',x); halo.setAttribute('cy',yy);
+      halo.setAttribute('r',7); halo.setAttribute('fill','#F6E2C0'); halo.setAttribute('opacity','.3');
+      halo.style.animationDelay = (Math.random()*3).toFixed(2)+'s';
+      const grp = document.createElementNS('http://www.w3.org/2000/svg','g');
+      grp.setAttribute('class','bulb'); grp.style.animationDelay=(Math.random()*6).toFixed(2)+'s';
+      const stem = document.createElementNS('http://www.w3.org/2000/svg','line');
+      stem.setAttribute('x1',x); stem.setAttribute('y1',yy-7); stem.setAttribute('x2',x); stem.setAttribute('y2',yy);
+      stem.setAttribute('stroke','#B68476'); stem.setAttribute('stroke-width','.8');
+      const bulb = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      bulb.setAttribute('cx',x); bulb.setAttribute('cy',yy+2.5); bulb.setAttribute('r','3.2');
+      bulb.setAttribute('fill', i%2 ? '#F6E2C0' : '#F2D9B6');
+      grp.appendChild(stem); grp.appendChild(bulb);
+      g.appendChild(halo); g.appendChild(grp);
+    }
+  })();
+
+  // ---- drifting fireflies & sparkles ----
+  (function(){
+    const sky = document.getElementById('sky');
+    const W = 660;
+    // fireflies
+    for(let i=0;i<14;i++){
+      const f = document.createElement('div');
+      f.className='firefly';
+      const left = Math.random()*100, top = 18+Math.random()*78;
+      f.style.left = left+'%'; f.style.top = top+'%';
+      const dur = (7+Math.random()*8).toFixed(1);
+      const dx = (Math.random()*60-30).toFixed(0), dy=(Math.random()*50-25).toFixed(0);
+      f.style.animation = `float${i} ${dur}s ease-in-out ${(Math.random()*5).toFixed(1)}s infinite, pulse 3.2s ease-in-out ${(Math.random()*3).toFixed(1)}s infinite`;
+      const style = document.createElement('style');
+      style.textContent = `@keyframes float${i}{0%,100%{transform:translate(0,0)}50%{transform:translate(${dx}px,${dy}px)}}`;
+      document.head.appendChild(style);
+      sky.appendChild(f);
+    }
+    // global pulse for fireflies
+    const ps = document.createElement('style');
+    ps.textContent = '@keyframes pulse{0%,100%{opacity:.2}50%{opacity:1}}';
+    document.head.appendChild(ps);
+    // sparkles (4-point stars)
+    for(let i=0;i<10;i++){
+      const s = document.createElement('div');
+      s.className='spark';
+      s.style.left = (Math.random()*92+3)+'%';
+      s.style.top  = (Math.random()*86+5)+'%';
+      s.style.fontSize = (8+Math.random()*8)+'px';
+      s.style.animationDelay = (Math.random()*4).toFixed(1)+'s';
+      s.innerHTML = '<svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0 C13 8 16 11 24 12 C16 13 13 16 12 24 C11 16 8 13 0 12 C8 11 11 8 12 0Z"/></svg>';
+      sky.appendChild(s);
+    }
+  })();
+</script>
+<script>
+  // ---- per-guest personalization via URL ----
+  // Usage:  invitation.html?guest=Emily%20%26%20James&rsvp=carla.shane@email.com
+  (function(){
+    const q = new URLSearchParams(location.search);
+    const guest = (q.get('guest') || '').trim();
+    const rsvp  = (q.get('rsvp')  || 'carlaandshanewed@gmail.com').trim();   // couple's RSVP inbox
+
+    if(guest){
+      const g = document.getElementById('greeting');
+      g.textContent = 'Dear ' + guest + ',';
+      g.style.display = 'block';
+    }
+
+    const subject = 'RSVP \u00B7 Carla & Shane';
+    const who = guest || 'Your name(s)';
+    const body =
+      'Hi Carla & Shane,\n\n' +
+      'We are so happy for you both \u2014 we will be there to celebrate with you!\n\n' +
+      'Guest(s): ' + who + '\n' +
+      'Number attending: \n' +
+      'Dietary requirements: \n\n' +
+      "Thank you so much for the kind invitation. We can't wait!\n\n" +
+      'With love,\n' + who + '\n\n' +
+      '\u2014\u2014\u2014\n' +
+      'Honeymoon fund (for anyone who would like to contribute in lieu of a gift):\n' +
+      'Bank: Capitec\n' +
+      'Account no: 1927489081\n' +
+      'Account type: Savings\n' +
+      'Branch: 470010\n' +
+      'Reference: ' + who;
+
+    const href = 'mailto:' + encodeURIComponent(rsvp) +
+                 '?subject=' + encodeURIComponent(subject) +
+                 '&body=' + encodeURIComponent(body);
+    document.getElementById('rsvpBtn').setAttribute('href', href);
+  })();
+</script>
+</body>
+</html>
