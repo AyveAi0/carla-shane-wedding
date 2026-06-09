@@ -45,7 +45,7 @@
 <body>
 <div class="wrap">
   <h1>Carla &amp; Shane</h1>
-  <p class="sub">WhatsApp send sheet · 76 guests</p>
+  <p class="sub">WhatsApp send sheet · 80 guests</p>
 
   <div class="panel">
     <label>1 · Where the invitation is hosted (its web link)</label>
@@ -58,20 +58,21 @@
   </div>
 
   <div class="filterbar" id="filterbar">
-    <button class="fbtn active" data-f="all">Everyone (76)</button>
+    <button class="fbtn active" data-f="all">Everyone (80)</button>
     <button class="fbtn" data-f="Wedding">Wedding</button>
     <button class="fbtn" data-f="Family">Family</button>
     <button class="fbtn" data-f="Shane">Shane's</button>
     <button class="fbtn" data-f="Paul">Paul's</button>
     <button class="fbtn" data-f="Melodie">Melodie's</button>
+    <button class="fbtn" data-f="Devin">Devin's</button>
   </div>
   <div id="list"></div>
 </div>
 
 <script>
-  const GUESTS = [["Wedding","Candice & Joe"],["Wedding","Sam & Partner"],["Wedding","Calli & David"],["Wedding","Antonette & Mark"],["Wedding","Kim & Partner"],["Wedding","Danida & Partner"],["Wedding","Uyanda & Partner"],["Wedding","Nats & Partner"],["Wedding","Anele & Partner"],["Wedding","Ally & Partner"],["Wedding","Natasha & Partner"],["Wedding","Oshie & Partner"],["Wedding","Anat & Amy"],["Wedding","Marc & Roger"],["Wedding","Nikki & Don"],["Wedding","Taryn"],["Wedding","Shannon & Marc"],["Wedding","Kimmy & Partner"],["Wedding","Candy & Chase"],["Wedding","Luis & Partner"],["Wedding","Nikki & Marc"],["Family","Melodie & Partner"],["Family","Paul & Asna"],["Family","Justin & Partner"],["Family","Gunter & Deseree"],["Family","Sharlene"],["Family","Auntie Bernie"],["Family","Roy"],["Family","Wetes"],["Shane","Mom & Dad"],["Shane","Chris & Partner"],["Shane","Jared & Partner"],["Shane","Elio & Jess"],["Shane","Brad & Partner"],["Shane","Sonny & Tessa"],["Shane","Neil & Justine"],["Shane","Ronaldo & Partner"],["Shane","Michael & Carla"],["Shane","Matthew & Partner"],["Shane","Gunter-Mark & Clarice"],["Shane","Uncle Ed & Aunty Irene"],["Shane","Warren & Megan"],["Shane","Paul & Janet"],["Shane","Don & Ariella"],["Shane","Gord & Partner"],["Shane","Angelo & Partner"],["Shane","John & Partner"],["Shane","Kgolo & Partner"],["Paul","Howard & Monique"],["Paul","Elaine & Kim"],["Paul","Brian & Sharlene"],["Melodie","Melodie & Brian"],["Melodie","Denise & Michael"],["Melodie","Marian & Michael"],["Melodie","Pickles & Enza"],["Melodie","Saul & Sasha"],["Melodie","Jill & Selwyn"],["Melodie","Debbie & Alan"],["Melodie","Ismay & David"],["Melodie","Larry & Helen"],["Melodie","Bernise"],["Melodie","Les Gritzman"],["Melodie","Lauren & Dean"],["Melodie","Jenny Clegg"],["Melodie","Yvonne Cuyler Wilson"],["Melodie","Marisa Schuller"],["Melodie","Ilana Ackerman"],["Melodie","Zahava Fissman"],["Melodie","Terry Levine"],["Melodie","Arye & Grant"],["Melodie","Janice & Kenny"],["Melodie","Irwin & Susan"],["Melodie","Brendon & Jill"],["Melodie","Ally & Rickey"],["Melodie","Barbara & Richard"],["Melodie","Rina"]];
+  const GUESTS = [["Wedding","Candice & Joe"],["Wedding","Sam & Partner"],["Wedding","Calli & David"],["Wedding","Antonette & Mark"],["Wedding","Kim & Partner"],["Wedding","Danida & Partner"],["Wedding","Uyanda & Partner"],["Wedding","Nats & Partner"],["Wedding","Anele & Partner"],["Wedding","Ally & Partner"],["Wedding","Natasha & Partner"],["Wedding","Oshie & Partner"],["Wedding","Anat & Amy"],["Wedding","Marc & Roger"],["Wedding","Nikki & Don"],["Wedding","Taryn"],["Wedding","Shannon & Marc"],["Wedding","Kimmy & Partner"],["Wedding","Candy & Chase"],["Wedding","Luis & Partner"],["Wedding","Nikki & Marc"],["Family","Melodie & Partner"],["Family","Paul & Asna"],["Family","Justin & Partner"],["Family","Gunter & Deseree"],["Family","Sharlene"],["Family","Auntie Bernie"],["Family","Roy"],["Family","Wetes"],["Shane","Mom & Dad"],["Shane","Chris & Partner"],["Shane","Jared & Partner"],["Shane","Elio & Jess"],["Shane","Brad & Partner"],["Shane","Sonny & Tessa"],["Shane","Neil & Justine"],["Shane","Ronaldo & Partner"],["Shane","Michael & Carla"],["Shane","Matthew & Partner"],["Shane","Gunter-Mark & Clarice"],["Shane","Uncle Ed & Aunty Irene"],["Shane","Warren & Megan"],["Shane","Paul & Janet"],["Shane","Don & Ariella"],["Shane","Gord & Partner"],["Shane","Angelo & Partner"],["Shane","John & Partner"],["Shane","Kgolo & Partner"],["Paul","Howard & Monique"],["Paul","Elaine & Kim"],["Paul","Brian & Sharlene"],["Melodie","Melodie & Brian"],["Melodie","Denise & Michael"],["Melodie","Marian & Michael"],["Melodie","Pickles & Enza"],["Melodie","Saul & Sasha"],["Melodie","Jill & Selwyn"],["Melodie","Debbie & Alan"],["Melodie","Ismay & David"],["Melodie","Larry & Helen"],["Melodie","Bernise"],["Melodie","Les Gritzman"],["Melodie","Lauren & Dean"],["Melodie","Jenny Clegg"],["Melodie","Yvonne Cuyler Wilson"],["Melodie","Marisa Schuller"],["Melodie","Ilana Ackerman"],["Melodie","Zahava Fissman"],["Melodie","Terry Levine"],["Melodie","Arye & Grant"],["Melodie","Janice & Kenny"],["Melodie","Irwin & Susan"],["Melodie","Brendon & Jill"],["Melodie","Ally & Rickey"],["Melodie","Barbara & Richard"],["Melodie","Rina"],["Devin","Jake Milner"],["Devin","Devin Edelstein & Partner"],["Devin","Jarred Lyfshitz & Chiara"],["Devin","Daniel Shapiro & Gabi"]];
 
-  const GROUP_TITLES = {Wedding:"Wedding List", Family:"Family", Shane:"Shane's List", Paul:"Paul's List", Melodie:"Melodie's List"};
+  const GROUP_TITLES = {Wedding:"Wedding List", Family:"Family", Shane:"Shane's List", Paul:"Paul's List", Melodie:"Melodie's List", Devin:"Devin's List"};
   const base = document.getElementById('base');
   const tpl  = document.getElementById('tpl');
   const list = document.getElementById('list');
