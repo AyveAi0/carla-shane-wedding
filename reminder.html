@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carla & Shane · A Gentle Reminder</title>
+<meta property="og:title" content="Carla &amp; Shane — A Gentle Reminder">
+<meta property="og:description" content="We'd love to know if you'll be celebrating with us. Kindly RSVP for 23 September 2026.">
+<meta name="theme-color" content="#E7C7C4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+  :root{ --cream:#FBF4EE; --pink-soft:#E7C7C4; --pink-deep:#C2807E; --rose1:#C99A78; --rose2:#E4C2A4; --rose3:#B68476;
+    --sage:#93A487; --sage-deep:#66795A; --dpink:#A2666A; --ink:#4A3F3B; --ink-soft:#6E5E58; --glow:#F6E2C0; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ font-family:'EB Garamond',serif; color:var(--ink); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:38px 16px;
+    background:
+      radial-gradient(120% 90% at 50% -10%, #FBEFEA 0%, transparent 55%),
+      radial-gradient(90% 70% at 12% 8%, rgba(231,199,196,.55) 0%, transparent 45%),
+      radial-gradient(90% 70% at 88% 92%, rgba(147,164,135,.40) 0%, transparent 45%),
+      linear-gradient(170deg,#F7EDE6 0%,#F2E5DA 48%,#EDE4D6 100%); }
+  .card{ position:relative; width:100%; max-width:600px; padding:64px 50px 54px; border-radius:6px; text-align:center; overflow:hidden;
+    background:radial-gradient(135% 80% at 50% 0%, rgba(246,226,192,.45) 0%, transparent 50%), linear-gradient(180deg,#FCF6F1,#F8EFE7);
+    box-shadow:0 40px 80px -30px rgba(102,121,90,.35), 0 18px 40px -24px rgba(194,128,126,.35); }
+  .frame{ position:absolute; inset:14px; border:1px solid rgba(182,132,118,.45); border-radius:3px; pointer-events:none; }
+  .frame::after{ content:""; position:absolute; inset:5px; border:1px solid rgba(147,164,135,.30); border-radius:2px; }
+  .corner{ position:absolute; width:92px; height:92px; opacity:.85; }
+  .corner svg{ width:100%; height:100%; }
+  .tl{ top:8px; left:8px; } .tr{ top:8px; right:8px; transform:scaleX(-1); }
+  .bl{ bottom:8px; left:8px; transform:scaleY(-1); } .br{ bottom:8px; right:8px; transform:scale(-1,-1); }
+  .spark{ position:absolute; color:var(--rose2); }
+  .content{ position:relative; z-index:3; }
+  .arch{ width:180px; display:block; margin:2px auto 18px; }
+  .rlabel{ font-size:12px; letter-spacing:.4em; text-transform:uppercase; color:var(--pink-deep); margin-bottom:14px; }
+  .greeting{ margin:0 0 14px; }
+  .greeting-pre{ display:block; font-size:12px; letter-spacing:.36em; text-transform:uppercase; color:var(--pink-deep); margin-bottom:3px; }
+  .greeting-name{ display:block; font-family:'Pinyon Script',cursive; font-size:42px; line-height:1.5; white-space:nowrap; padding:5px 0; color:var(--dpink); }
+  .msg{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:21px; line-height:1.5; color:var(--ink-soft); max-width:430px; margin:0 auto; }
+  .divider{ display:flex; align-items:center; justify-content:center; gap:13px; margin:24px auto; max-width:280px; }
+  .divider .line{ flex:1; height:1px; background:linear-gradient(90deg,transparent,rgba(182,132,118,.55),transparent); }
+  .names{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:34px; color:var(--dpink); margin:2px 0 12px; }
+  .details{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:20px; color:var(--sage-deep); line-height:1.5; }
+  .details b{ font-weight:500; font-style:normal; color:var(--dpink); }
+  .rsvp{ font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); line-height:1.9; max-width:430px; margin:22px auto 22px; }
+  .btn{ display:inline-block; font-family:'EB Garamond',serif; font-size:13px; letter-spacing:.24em; text-transform:uppercase; color:var(--rose3); text-decoration:none;
+    padding:14px 32px; border-radius:40px; background:linear-gradient(135deg,#FCF6EF,#F4E4D4); border:1px solid rgba(201,154,120,.55);
+    box-shadow:0 10px 24px -12px rgba(182,132,118,.7), inset 0 1px 0 rgba(255,255,255,.8); }
+  .rsvp-alt{ font-family:'Cormorant Garamond',serif; font-style:italic; font-size:15px; color:var(--ink-soft); margin-top:16px; }
+  .rsvp-alt a{ color:var(--rose3); text-decoration:none; }
+  @media (max-width:520px){ .card{ padding:48px 26px 42px; } .greeting-name{ font-size:34px; } .names{ font-size:28px; } }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="frame"></div>
+    <div class="corner tl"><svg viewBox="0 0 120 120" fill="none"><path d="M8 8 C40 20 62 44 78 80" stroke="#93A487" stroke-width="1.4" stroke-linecap="round"/><g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round"><path d="M22 18 q12 -8 22 -4 q-8 8 -22 4"/><path d="M36 34 q12 -8 22 -4 q-8 8 -22 4"/><path d="M50 52 q12 -8 22 -4 q-8 8 -22 4"/></g><circle cx="84" cy="86" r="3" fill="#C99A78"/></svg></div><div class="corner tr"><svg viewBox="0 0 120 120" fill="none"><path d="M8 8 C40 20 62 44 78 80" stroke="#93A487" stroke-width="1.4" stroke-linecap="round"/><g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round"><path d="M22 18 q12 -8 22 -4 q-8 8 -22 4"/><path d="M36 34 q12 -8 22 -4 q-8 8 -22 4"/><path d="M50 52 q12 -8 22 -4 q-8 8 -22 4"/></g><circle cx="84" cy="86" r="3" fill="#C99A78"/></svg></div>
+    <div class="corner bl"><svg viewBox="0 0 120 120" fill="none"><path d="M8 8 C40 20 62 44 78 80" stroke="#93A487" stroke-width="1.4" stroke-linecap="round"/><g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round"><path d="M22 18 q12 -8 22 -4 q-8 8 -22 4"/><path d="M36 34 q12 -8 22 -4 q-8 8 -22 4"/><path d="M50 52 q12 -8 22 -4 q-8 8 -22 4"/></g><circle cx="84" cy="86" r="3" fill="#C99A78"/></svg></div><div class="corner br"><svg viewBox="0 0 120 120" fill="none"><path d="M8 8 C40 20 62 44 78 80" stroke="#93A487" stroke-width="1.4" stroke-linecap="round"/><g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round"><path d="M22 18 q12 -8 22 -4 q-8 8 -22 4"/><path d="M36 34 q12 -8 22 -4 q-8 8 -22 4"/><path d="M50 52 q12 -8 22 -4 q-8 8 -22 4"/></g><circle cx="84" cy="86" r="3" fill="#C99A78"/></svg></div>
+    <div class="spark" style="left:12%;top:20%"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0 C13 8 16 11 24 12 C16 13 13 16 12 24 C11 16 8 13 0 12 C8 11 11 8 12 0Z"/></svg></div>
+    <div class="spark" style="right:14%;top:30%"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0 C13 8 16 11 24 12 C16 13 13 16 12 24 C11 16 8 13 0 12 C8 11 11 8 12 0Z"/></svg></div>
+    <div class="spark" style="left:18%;bottom:22%"><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0 C13 8 16 11 24 12 C16 13 13 16 12 24 C11 16 8 13 0 12 C8 11 11 8 12 0Z"/></svg></div>
+
+    <div class="content">
+      <svg class="arch" viewBox="0 0 300 150" fill="none">
+        <path d="M30 140 C40 70 110 28 150 28 C190 28 260 70 270 140" stroke="#93A487" stroke-width="1.5" stroke-linecap="round"/>
+        <g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round" fill="none">
+          <path d="M84 70 q15 -11 29 -6 q-10 11 -29 6"/><path d="M120 48 q16 -9 30 -2 q-11 9 -30 2"/>
+          <path d="M180 48 q-16 -9 -30 -2 q11 9 30 2"/><path d="M216 70 q-15 -11 -29 -6 q10 11 29 6"/></g>
+        <circle cx="150" cy="52" r="5.5" fill="#F6E2C0"/><circle cx="150" cy="52" r="11" fill="#F6E2C0" opacity=".28"/>
+      </svg>
+
+      <p class="rlabel">A Gentle Reminder</p>
+
+      <div class="greeting" id="greeting" style="display:none;">
+        <span class="greeting-pre">Dear</span>
+        <span class="greeting-name" id="greetingName"></span>
+      </div>
+
+      <p class="msg">We're busy finalising the little details for our big day, and we'd so love to know if you'll be celebrating with us. If you haven't had a chance to reply yet, kindly let us know &mdash; either way &mdash; as soon as you can.</p>
+
+      <div class="divider"><span class="line"></span>
+        <svg width="26" height="14" viewBox="0 0 26 14" fill="none"><path d="M13 1 C9 5 4 6 1 7 C4 8 9 9 13 13 C17 9 22 8 25 7 C22 6 17 5 13 1Z" fill="#C99A78" opacity=".85"/></svg>
+        <span class="line"></span></div>
+
+      <div class="names">Carla &amp; Shane</div>
+      <p class="details"><b>23 September 2026</b> &middot; 3pm<br>Via Venetto &middot; Acorn Lane, Sandton</p>
+
+      <p class="rsvp">Kindly reply by the first of July.<br>We can't wait to celebrate with you</p>
+
+      <a class="btn" id="rsvpBtn" href="mailto:carlaandshanewed@gmail.com">&#9993;&nbsp;&nbsp;RSVP by Email</a>
+      <p class="rsvp-alt">or simply email <a href="mailto:carlaandshanewed@gmail.com">carlaandshanewed@gmail.com</a></p>
+    </div>
+  </div>
+
+<script>
+  (function(){
+    const q=new URLSearchParams(location.search);
+    const guest=(q.get('guest')||'').trim();
+    const rsvp=(q.get('rsvp')||'carlaandshanewed@gmail.com').trim();
+    if(guest){
+      const g=document.getElementById('greeting'), nameEl=document.getElementById('greetingName');
+      nameEl.textContent=guest+',';
+      g.style.display='block';
+      function fit(){ let s=42; nameEl.style.fontSize=s+'px'; const avail=g.clientWidth-6; while(nameEl.scrollWidth>avail && s>20){ s--; nameEl.style.fontSize=s+'px'; } }
+      fit(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit); window.addEventListener('resize',fit);
+    }
+    const who=guest||'Your name(s)';
+    const subject='RSVP \u00B7 Carla & Shane';
+    const body='Hi Carla & Shane,\n\n'+
+      'We are so happy for you both \u2014 we will be there to celebrate with you!\n\n'+
+      'Guest(s): '+who+'\n'+'Number attending: \n'+'Dietary requirements: \n\n'+
+      "Thank you so much for the kind invitation. We can't wait!\n\n"+'With love,\n'+who+'\n\n'+
+      '\u2014\u2014\u2014\n'+'Honeymoon fund (for anyone who would like to contribute in lieu of a gift):\n'+
+      'Bank: Capitec\n'+'Account name: SH Lossl\n'+'Account no: 1927489081\n'+'Account type: Savings\n'+'Branch: 470010\n'+'Reference: '+who;
+    document.getElementById('rsvpBtn').setAttribute('href','mailto:'+encodeURIComponent(rsvp)+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body));
+  })();
+</script>
+</body>
+</html>

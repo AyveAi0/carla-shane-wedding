@@ -8,57 +8,63 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --cream:#FBF4EE;--pink-soft:#E7C7C4;--pink-deep:#C2807E;--rose3:#B68476;--rose1:#C99A78;
-    --sage:#93A487;--dpink:#A2666A;--ink:#4A3F3B;--ink-soft:#6E5E58;--wa:#1FA855;
-  }
+  :root{ --cream:#FBF4EE;--pink-soft:#E7C7C4;--pink-deep:#C2807E;--rose1:#C99A78;--rose2:#E4C2A4;--rose3:#B68476;
+    --sage:#93A487;--sage-deep:#66795A;--dpink:#A2666A;--ink:#4A3F3B;--ink-soft:#6E5E58;--wa:#1FA855;--amber:#C98A3C; }
   *{box-sizing:border-box;margin:0;padding:0;}
-  body{font-family:'EB Garamond',serif;color:var(--ink);background:linear-gradient(180deg,#FBF4EE,#F4E8DD);padding:28px 16px 60px;}
-  .wrap{max-width:920px;margin:0 auto;}
-  h1{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:40px;color:var(--dpink);text-align:center;}
-  .sub{text-align:center;color:var(--ink-soft);margin:4px 0 22px;letter-spacing:.04em;}
-  .panel{background:#FCF7F2;border:1px solid rgba(182,132,118,.3);border-radius:14px;padding:18px 18px 14px;margin-bottom:20px;box-shadow:0 10px 30px -22px rgba(102,121,90,.5);}
-  label{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:6px;}
-  input[type=text]{width:100%;padding:12px 14px;border:1px solid rgba(182,132,118,.45);border-radius:9px;font-family:'EB Garamond',serif;font-size:16px;color:var(--ink);background:#fff;}
-  .hint{font-size:13px;color:var(--ink-soft);margin-top:7px;line-height:1.5;}
-  .hint code{background:#F1E5D8;padding:1px 6px;border-radius:5px;font-size:12px;}
-  .grp{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--sage);margin:22px 4px 8px;border-bottom:1px solid rgba(147,164,135,.3);padding-bottom:5px;}
-  .row{display:flex;align-items:center;gap:10px;padding:9px 4px;border-bottom:1px solid rgba(182,132,118,.16);flex-wrap:wrap;}
-  .name{flex:0 0 180px;font-size:17px;color:var(--dpink);}
-  .url{flex:1 1 260px;min-width:200px;font-size:12.5px;color:var(--ink-soft);background:#fff;border:1px solid rgba(182,132,118,.3);border-radius:7px;padding:8px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
-  .btns{display:flex;gap:7px;flex:0 0 auto;}
-  button,a.act{font-family:'EB Garamond',serif;font-size:13px;letter-spacing:.04em;border-radius:8px;padding:9px 13px;cursor:pointer;border:1px solid transparent;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
-  .copy{background:#F1E5D8;color:var(--rose3);border-color:rgba(182,132,118,.4);}
-  .copy:hover{background:#E9D9C8;}
-  .share{background:var(--wa);color:#fff;}
-  .share:hover{filter:brightness(.95);}
-  .share svg{width:15px;height:15px;}
-  .toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px;}
-  .count{margin-left:auto;color:var(--ink-soft);font-size:14px;}
-  .msgbox{width:100%;min-height:64px;padding:11px 13px;border:1px solid rgba(182,132,118,.45);border-radius:9px;font-family:'EB Garamond',serif;font-size:15px;color:var(--ink);background:#fff;resize:vertical;margin-top:4px;}
-  .ok{color:var(--wa);font-size:12px;margin-left:6px;}
-  .filterbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;}
-  .fbtn{font-family:'EB Garamond',serif;font-size:13px;letter-spacing:.06em;padding:8px 14px;border-radius:20px;border:1px solid rgba(182,132,118,.4);background:#FCF7F2;color:var(--rose3);cursor:pointer;}
-  .fbtn.active{background:var(--dpink);color:#fff;border-color:var(--dpink);}
+  body{ font-family:'EB Garamond',serif;color:var(--ink);background:linear-gradient(180deg,#FBF4EE,#F4E8DD);padding:26px 14px 70px; }
+  .wrap{ max-width:960px;margin:0 auto; }
+  h1{ font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:40px;color:var(--dpink);text-align:center; }
+  .sub{ text-align:center;color:var(--ink-soft);margin:4px 0 20px;letter-spacing:.04em; }
+  .panel{ background:#FCF7F2;border:1px solid rgba(182,132,118,.3);border-radius:14px;padding:18px;margin-bottom:18px;box-shadow:0 10px 30px -22px rgba(102,121,90,.5); }
+  label{ display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:6px; }
+  input[type=text],textarea{ width:100%;padding:11px 13px;border:1px solid rgba(182,132,118,.45);border-radius:9px;font-family:'EB Garamond',serif;font-size:15px;color:var(--ink);background:#fff; }
+  textarea{ min-height:58px;resize:vertical; }
+  .hint{ font-size:13px;color:var(--ink-soft);margin-top:7px;line-height:1.5; }
+  .hint code{ background:#F1E5D8;padding:1px 6px;border-radius:5px;font-size:12px; }
+  .filterbar{ display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px; }
+  .fbtn,.sbtn{ font-family:'EB Garamond',serif;font-size:13px;letter-spacing:.05em;padding:8px 14px;border-radius:20px;border:1px solid rgba(182,132,118,.4);background:#FCF7F2;color:var(--rose3);cursor:pointer; }
+  .fbtn.active{ background:var(--dpink);color:#fff;border-color:var(--dpink); }
+  .sbtn.active{ background:var(--sage-deep);color:#fff;border-color:var(--sage-deep); }
+  .counts{ text-align:center;font-size:14px;color:var(--ink-soft);margin:6px 0 16px;letter-spacing:.02em; }
+  .counts b{ color:var(--dpink); }
+  .grp{ font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--sage);margin:22px 4px 8px;border-bottom:1px solid rgba(147,164,135,.3);padding-bottom:5px; }
+  .row{ display:flex;align-items:center;gap:10px;padding:9px 4px;border-bottom:1px solid rgba(182,132,118,.16);flex-wrap:wrap; }
+  .chk{ flex:0 0 auto;display:inline-flex;align-items:center;cursor:pointer; }
+  .chk input{ width:20px;height:20px;accent-color:var(--sage-deep);cursor:pointer; }
+  .name{ flex:0 0 168px;font-size:17px;color:var(--dpink); }
+  .row.done .name{ text-decoration:line-through;color:var(--ink-soft);opacity:.7; }
+  .dec{ color:#B04A4A;font-size:11.5px;letter-spacing:.08em;text-decoration:none;display:inline-block; }
+  .row.done{ background:rgba(147,164,135,.08); }
+  .row.done .remind{ display:none; }   /* reminder only shows for those who haven't confirmed */
+  .url{ flex:1 1 240px;min-width:190px;font-size:12px;color:var(--ink-soft);background:#fff;border:1px solid rgba(182,132,118,.3);border-radius:7px;padding:8px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+  .btns{ display:flex;gap:7px;flex:0 0 auto;flex-wrap:wrap; }
+  button.copy,a.act{ font-family:'EB Garamond',serif;font-size:13px;border-radius:8px;padding:9px 12px;cursor:pointer;border:1px solid transparent;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap; }
+  .copy{ background:#F1E5D8;color:var(--rose3);border-color:rgba(182,132,118,.4); }
+  .share{ background:var(--wa);color:#fff; }
+  .remind{ background:linear-gradient(135deg,#EBD9B8,#D9A86A);color:#5a3d15;border-color:rgba(201,138,60,.5); }
+  .act svg{ width:15px;height:15px; }
+  .note{ font-size:12.5px;color:var(--ink-soft);text-align:center;margin-top:14px;font-style:italic; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>Carla &amp; Shane</h1>
-  <p class="sub">WhatsApp send sheet · 97 guests</p>
+  <p class="sub">Send sheet &amp; RSVP tracker &middot; <span id="totalTop"></span> guests</p>
 
   <div class="panel">
-    <label>1 · Where the invitation is hosted (its web link)</label>
-    <input id="base" type="text" placeholder="https://ayveai0.github.io/carla-shane-wedding/" value="https://ayveai0.github.io/carla-shane-wedding/">
-    <p class="hint">Upload <code>carla-shane-invitation.html</code> to any web host (your AYVE.AI hosting, Netlify Drop, or GitHub Pages), then paste its address above. Each guest link below adds their name automatically, e.g. <code>…invitation.html?guest=Candice%20%26%20Joe</code>. The RSVP button on that page opens the guest's mail app addressed to you.</p>
+    <label>1 &middot; Where the invitation is hosted</label>
+    <input id="base" type="text" value="https://ayveai0.github.io/carla-shane-wedding/">
+    <p class="hint">Guest links use this address. The reminder button points to <code>reminder.html</code> in the same folder. Tick a guest's box once they RSVP &mdash; then use the <b>Awaiting reply</b> filter to see who still needs a nudge.</p>
 
-    <label style="margin-top:16px">2 · WhatsApp message (optional — edit to taste)</label>
-    <textarea id="tpl" class="msgbox">Hi {name}! 💍 You're invited to Carla & Shane's wedding. Tap to open your invitation and RSVP: {url}</textarea>
-    <p class="hint"><b>{name}</b> and <b>{url}</b> are filled in for each guest. “Share” opens WhatsApp with the message ready — just pick the contact and send.</p>
+    <label style="margin-top:16px">2 &middot; Invitation message</label>
+    <textarea id="tplInvite">Hi {name}! 💍 You're invited to Carla & Shane's wedding. Tap to open your invitation and RSVP: {url}</textarea>
+
+    <label style="margin-top:14px">3 &middot; Reminder message</label>
+    <textarea id="tplRemind">Hi {name}! 💐 A gentle reminder about Carla & Shane's wedding — we'd love to know if you'll be joining us. Please RSVP (or let us know either way) here: {url}</textarea>
   </div>
 
-  <div class="filterbar" id="filterbar">
-    <button class="fbtn active" data-f="all">Everyone (97)</button>
+  <div class="filterbar" id="groupbar">
+    <button class="fbtn active" data-f="all">Everyone</button>
     <button class="fbtn" data-f="Wedding">Carla's</button>
     <button class="fbtn" data-f="Family">Family</button>
     <button class="fbtn" data-f="Shane">Shane's</button>
@@ -66,58 +72,100 @@
     <button class="fbtn" data-f="Melodie">Melodie's</button>
     <button class="fbtn" data-f="Devin">Devin's</button>
   </div>
+  <div class="filterbar" id="statusbar">
+    <button class="sbtn active" data-s="all">All</button>
+    <button class="sbtn" data-s="pending">⏳ Awaiting reply</button>
+    <button class="sbtn" data-s="confirmed">✓ Confirmed</button>
+  </div>
+  <div class="counts" id="counts"></div>
+
   <div id="list"></div>
+  <p class="note">Tip: confirmations are saved in this browser on this device. Whoever tracks RSVPs should use the same phone/computer each time.</p>
 </div>
 
 <script>
-  const GUESTS = [["Wedding","Candice & Joe"],["Wedding","Sam & Partner"],["Wedding","Calli & David"],["Wedding","Antonette & Mark"],["Wedding","Kim & Partner"],["Wedding","Danida & Partner"],["Wedding","Uyanda & Partner"],["Wedding","Nats & Partner"],["Wedding","Anele & Partner"],["Wedding","Ally & Partner"],["Wedding","Natasha & Partner"],["Wedding","Oshie & Partner"],["Wedding","Anat & Amy"],["Wedding","Marc & Roger"],["Wedding","Nikki & Don"],["Wedding","Taryn"],["Wedding","Shannon & Marc"],["Wedding","Kimmy & Partner"],["Wedding","Candy & Chase"],["Wedding","Luis & Partner"],["Wedding","Nikki & Marc"],["Wedding","Dom & Partner"],["Wedding","Jessica & Partner"],["Wedding","Margo & Partner"],["Wedding","Bianca & Partner"],["Wedding","Michelle & Partner"],["Wedding","Mariah & Partner"],["Wedding","Terri & Partner"],["Wedding","Robby & Partner"],["Family","Melodie & Partner"],["Family","Paul & Asna"],["Family","Justin & Partner"],["Family","Gunter & Deseree"],["Family","Sharlene"],["Family","Bernie & Rui"],["Family","Wetes"],["Family","Devin & Partner"],["Shane","Mom & Dad"],["Shane","Chris & Partner"],["Shane","Jarrod & Partner"],["Shane","Elio & Jess"],["Shane","Brad & Partner"],["Shane","Sonny & Tessa"],["Shane","Neil & Justine"],["Shane","Ronaldo & Partner"],["Shane","Michael & Carla"],["Shane","Matthew & Partner"],["Shane","Gunter-Mark & Clarice"],["Shane","Ed & Irene"],["Shane","Warren & Megan"],["Shane","Paul & Janet"],["Shane","Don & Ariella"],["Shane","Gord & Partner"],["Shane","Angelo & Partner"],["Shane","John & Partner"],["Shane","Kgolo & Partner"],["Shane","Chantell & Robbie"],["Paul","Howard & Monique"],["Paul","Elaine & Kim"],["Paul","Brian & Sharlene"],["Paul","Lauren & Craig"],["Paul","Michael & Jean"],["Melodie","Melodie & Brian"],["Melodie","Denise & Michael"],["Melodie","Marian & Michael"],["Melodie","Pickles & Enza"],["Melodie","Saul & Sasha"],["Melodie","Jill & Selwyn"],["Melodie","Debbie & Alan"],["Melodie","Ismay & David"],["Melodie","Larry & Helen"],["Melodie","Bernise"],["Melodie","Les Gritzman"],["Melodie","Lauren & Dean"],["Melodie","Jenny Clegg"],["Melodie","Yvonne Cuyler Wilson"],["Melodie","Marisa Schuller"],["Melodie","Ilana Ackerman"],["Melodie","Zahava Fissman"],["Melodie","Terry Levine"],["Melodie","Arye & Grant"],["Melodie","Janice & Kenny"],["Melodie","Irwin & Susan"],["Melodie","Brendon & Jill"],["Melodie","Ally & Rickey"],["Melodie","Barbara & Richard"],["Melodie","Rina"],["Melodie","Sheryl Behrend"],["Melodie","Candice Hess"],["Melodie","Brian & Aliza"],["Melodie","Debbie & Brian"],["Melodie","Bev & Selwyn"],["Melodie","Sheryl & Partner"],["Devin","Jake Milner & Partner"],["Devin","Devin Edelstein & Kate"],["Devin","Jarred Lyfshitz & Chiara"],["Devin","Daniel Shapiro & Gabi"]];
-
+  const GUESTS = [["Wedding", "Candice & Joe"], ["Wedding", "Sam & Partner"], ["Wedding", "Calli & David"], ["Wedding", "Antonette & Mark"], ["Wedding", "Kim & Partner"], ["Wedding", "Danida & Partner"], ["Wedding", "Uyanda & Partner"], ["Wedding", "Nats & Partner"], ["Wedding", "Anele & Partner"], ["Wedding", "Ally & Partner"], ["Wedding", "Natasha & Partner"], ["Wedding", "Oshie & Partner"], ["Wedding", "Anat & Amy"], ["Wedding", "Marc & Roger"], ["Wedding", "Nikki & Don"], ["Wedding", "Taryn"], ["Wedding", "Shannon & Marc"], ["Wedding", "Kimmy & Partner"], ["Wedding", "Candy & Chase"], ["Wedding", "Luis & Partner"], ["Wedding", "Nikki & Marc"], ["Wedding", "Dom & Partner"], ["Wedding", "Jessica & Partner"], ["Wedding", "Margo & Partner"], ["Wedding", "Bianca & Partner"], ["Wedding", "Michelle & Partner"], ["Wedding", "Mariah & Partner"], ["Wedding", "Terri & Partner"], ["Wedding", "Robby & Partner"], ["Wedding", "Godfrey & Partner"], ["Family", "Melodie & Brian"], ["Family", "Paul & Asna"], ["Family", "Justin & Partner"], ["Family", "Gunter & Deseree"], ["Family", "Sharlene"], ["Family", "Bernie & Rui"], ["Family", "Wetes"], ["Family", "Devin & Partner"], ["Shane", "Chris & Partner"], ["Shane", "Jarrod & Partner"], ["Shane", "Elio & Jess"], ["Shane", "Brad & Partner"], ["Shane", "Sonny & Tessa"], ["Shane", "Neil & Justine"], ["Shane", "Ronaldo & Partner"], ["Shane", "Michael & Carla"], ["Shane", "Matthew & Partner"], ["Shane", "Gunter-Mark & Clarice"], ["Shane", "Ed & Irene"], ["Shane", "Warren & Megan"], ["Shane", "Paul & Janet"], ["Shane", "Don & Ariella"], ["Shane", "Gord & Partner"], ["Shane", "Angelo & Partner"], ["Shane", "John & Partner"], ["Shane", "Kgolo & Partner"], ["Shane", "Chantell & Robbie"], ["Shane", "Patrick & Partner"], ["Paul", "Howard & Monique"], ["Paul", "Elaine & Kim"], ["Paul", "Brian & Sharlene"], ["Paul", "Lauren & Craig"], ["Paul", "Michael & Jean"], ["Melodie", "Denise & Michael"], ["Melodie", "Marian & Michael"], ["Melodie", "Pickles & Enza"], ["Melodie", "Saul & Sasha"], ["Melodie", "Jill & Selwyn"], ["Melodie", "Debbie & Alan"], ["Melodie", "Ismay & David"], ["Melodie", "Larry & Helen"], ["Melodie", "Bernise"], ["Melodie", "Les Gritzman"], ["Melodie", "Lauren & Dean"], ["Melodie", "Jenny Clegg"], ["Melodie", "Yvonne Cuyler Wilson"], ["Melodie", "Marisa Schuller"], ["Melodie", "Ilana Ackerman"], ["Melodie", "Zahava Fissman"], ["Melodie", "Terry Levine"], ["Melodie", "Arye & Grant"], ["Melodie", "Janice & Kenny"], ["Melodie", "Irwin & Susan"], ["Melodie", "Brendon & Jill"], ["Melodie", "Ally & Rickey"], ["Melodie", "Barbara & Richard"], ["Melodie", "Rina"], ["Melodie", "Sheryl Behrend"], ["Melodie", "Candice Hess"], ["Melodie", "Brian & Aliza"], ["Melodie", "Debbie & Brian"], ["Melodie", "Bev & Selwyn"], ["Melodie", "Sheryl & Partner"], ["Melodie", "Martine & Brian"], ["Melodie", "Von Flymen & Partner"], ["Devin", "Jake Milner & Partner"], ["Devin", "Devin Edelstein & Kate"], ["Devin", "Jarred Lyfshitz & Chiara"], ["Devin", "Daniel Shapiro & Gabi"]];
   const GROUP_TITLES = {Wedding:"Carla's List", Family:"Family", Shane:"Shane's List", Paul:"Paul's List", Melodie:"Melodie's List", Devin:"Devin's List"};
-  const base = document.getElementById('base');
-  const tpl  = document.getElementById('tpl');
-  const list = document.getElementById('list');
+  const CONFIRMED_SEED = ["Brendon & Jill", "Elaine & Kim", "Natasha & Partner", "Sam & Partner", "Shannon & Marc", "Warren & Megan", "Ally & Partner", "Uyanda & Partner", "Pickles & Enza", "Brian & Sharlene", "Marisa Schuller", "Janice & Kenny", "Arye & Grant", "Denise & Michael", "Neil & Justine", "Nikki & Don", "Jarred Lyfshitz & Chiara", "Sheryl Behrend", "Matthew & Partner", "Nats & Partner", "Jenny Clegg", "Oshie & Partner", "Calli & David", "Danida & Partner", "Elio & Jess", "Terri & Partner", "Barbara & Richard", "Ilana Ackerman", "Kim & Partner", "Antonette & Mark", "Candice & Joe", "Kimmy & Partner", "Melodie & Brian", "Paul & Asna", "Justin & Partner", "Gunter & Deseree", "Wetes", "Devin & Partner", "Chris & Partner", "Jarrod & Partner", "Brad & Partner", "Michael & Carla"];  // 29 accepted
+  const DECLINED_SEED = ["Robby & Partner", "Jill & Selwyn", "Bernie & Rui", "Gunter-Mark & Clarice", "Ed & Irene"];  // replied: cannot attend
+  const base=document.getElementById('base');
+  const tplInvite=document.getElementById('tplInvite');
+  const tplRemind=document.getElementById('tplRemind');
+  const list=document.getElementById('list');
+  const countsEl=document.getElementById('counts');
+  document.getElementById('totalTop').textContent=GUESTS.length;
 
-  function buildUrl(name){
-    let b = base.value.trim();
-    const sep = b.includes('?') ? '&' : '?';
-    return b + sep + 'guest=' + encodeURIComponent(name);
-  }
-  function waLink(name){
-    const url = buildUrl(name);
-    const msg = tpl.value.replace(/{name}/g, name).replace(/{url}/g, url);
-    return 'https://wa.me/?text=' + encodeURIComponent(msg);
-  }
+  const KEY='cs_rsvp_confirmed_v1';
+  let confirmed={}; CONFIRMED_SEED.forEach(n=>confirmed[n]=true); DECLINED_SEED.forEach(n=>confirmed[n]=true); try{ Object.assign(confirmed, JSON.parse(localStorage.getItem(KEY)||'{}')); }catch(e){}
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(confirmed)); }catch(e){} }
+
+  let curGroup='all', curStatus='all';
+
+  function inviteUrl(name){ let b=base.value.trim(); return b + (b.includes('?')?'&':'?') + 'guest=' + encodeURIComponent(name); }
+  function dirOf(u){ u=u.trim(); if(/\.html?($|\?|#)/i.test(u)) return u.replace(/[^\/?#]*\.html?.*$/i,''); return u.endsWith('/')?u:u+'/'; }
+  function reminderUrl(name){ return dirOf(base.value) + 'reminder.html?guest=' + encodeURIComponent(name); }
+  function waInvite(name){ const m=tplInvite.value.replace(/{name}/g,name).replace(/{url}/g,inviteUrl(name)); return 'https://wa.me/?text='+encodeURIComponent(m); }
+  function waRemind(name){ const m=tplRemind.value.replace(/{name}/g,name).replace(/{url}/g,reminderUrl(name)); return 'https://wa.me/?text='+encodeURIComponent(m); }
+
+  const WA_ICON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.2 1.1-1.7 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.3-.3.5l-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.9.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg>';
+
   function render(){
-    list.innerHTML = '';
-    let last = null;
+    list.innerHTML='';
+    let last=null;
     GUESTS.forEach(([grp,name])=>{
       if(grp!==last){ last=grp; const h=document.createElement('div'); h.className='grp'; h.dataset.g=grp; h.textContent=GROUP_TITLES[grp]||grp; list.appendChild(h); }
-      const url = buildUrl(name);
-      const row = document.createElement('div'); row.className='row'; row.dataset.g=grp;
-      row.innerHTML =
-        '<div class="name">'+name+'</div>'+
+      const url=inviteUrl(name);
+      const row=document.createElement('div'); row.className='row'+(confirmed[name]?' done':''); row.dataset.g=grp; row.dataset.name=name;
+      row.innerHTML=
+        '<label class="chk"><input type="checkbox" '+(confirmed[name]?'checked':'')+'></label>'+
+        '<div class="name">'+name+(DECLINED_SEED.includes(name)?' <span class="dec">\u2717 declined</span>':'')+'</div>'+
         '<div class="url" title="'+url+'">'+url+'</div>'+
         '<div class="btns">'+
-          '<button class="copy">Copy link</button>'+
-          '<a class="act share" target="_blank" rel="noopener" href="'+waLink(name)+'">'+
-            '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.2 1.1-1.7 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.3-.3.5l-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.9.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg>'+
-            'Share</a>'+
+          '<button class="copy">Copy</button>'+
+          '<a class="act share" target="_blank" rel="noopener" href="'+waInvite(name)+'">'+WA_ICON+'Invite</a>'+
+          '<a class="act remind" target="_blank" rel="noopener" href="'+waRemind(name)+'">'+WA_ICON+'Reminder</a>'+
         '</div>';
+      row.querySelector('.confirm, input[type=checkbox]').addEventListener('change', e=>{
+        if(e.target.checked){ confirmed[name]=true; row.classList.add('done'); } else { delete confirmed[name]; row.classList.remove('done'); }
+        save(); applyFilters();
+      });
       row.querySelector('.copy').addEventListener('click', e=>{
-        navigator.clipboard.writeText(url).then(()=>{ e.target.textContent='Copied ✓'; setTimeout(()=>e.target.textContent='Copy link',1400); })
-        .catch(()=>{ const t=document.createElement('textarea'); t.value=url; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); e.target.textContent='Copied ✓'; setTimeout(()=>e.target.textContent='Copy link',1400); });
+        navigator.clipboard.writeText(url).then(()=>{ e.target.textContent='Copied ✓'; setTimeout(()=>e.target.textContent='Copy',1400); })
+        .catch(()=>{ const t=document.createElement('textarea'); t.value=url; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); e.target.textContent='Copied ✓'; setTimeout(()=>e.target.textContent='Copy',1400); });
       });
       list.appendChild(row);
     });
+    applyFilters();
   }
-  function applyFilter(g){
-    document.querySelectorAll('#list [data-g]').forEach(el=>{ el.style.display = (g==='all'||el.dataset.g===g)?'':'none'; });
-    document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('active', b.dataset.f===g));
+
+  function applyFilters(){
+    document.querySelectorAll('#list .row').forEach(r=>{
+      const g=r.dataset.g, name=r.dataset.name, isConf=!!confirmed[name];
+      const gOk=(curGroup==='all'||g===curGroup);
+      const sOk=(curStatus==='all')||(curStatus==='confirmed'?isConf:!isConf);
+      r.style.display=(gOk&&sOk)?'':'none';
+    });
+    document.querySelectorAll('#list .grp').forEach(h=>{
+      let n=h.nextElementSibling, any=false;
+      while(n && !n.classList.contains('grp')){ if(n.classList.contains('row') && n.style.display!=='none'){ any=true; break; } n=n.nextElementSibling; }
+      h.style.display=any?'':'none';
+    });
+    updateCounts();
   }
-  document.getElementById('filterbar').addEventListener('click', e=>{ if(e.target.classList.contains('fbtn')) applyFilter(e.target.dataset.f); });
-  base.addEventListener('input', ()=>{ render(); });
+
+  function updateCounts(){
+    const total=GUESTS.length; let c=0,d=0;
+    GUESTS.forEach(([g,n])=>{ if(DECLINED_SEED.includes(n)) d++; else if(confirmed[n]) c++; });
+    countsEl.innerHTML='<b>'+c+'</b> accepted &middot; <b>'+d+'</b> declined &middot; <b>'+(total-c-d)+'</b> awaiting reply &middot; '+total+' invited';
+  }
+
+  document.getElementById('groupbar').addEventListener('click', e=>{ if(!e.target.classList.contains('fbtn'))return;
+    curGroup=e.target.dataset.f; document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('active',b===e.target)); applyFilters(); });
+  document.getElementById('statusbar').addEventListener('click', e=>{ if(!e.target.classList.contains('sbtn'))return;
+    curStatus=e.target.dataset.s; document.querySelectorAll('.sbtn').forEach(b=>b.classList.toggle('active',b===e.target)); applyFilters(); });
   base.addEventListener('input', render);
-  tpl.addEventListener('input', render);
+  tplInvite.addEventListener('input', render);
+  tplRemind.addEventListener('input', render);
   render();
 </script>
 </body>
