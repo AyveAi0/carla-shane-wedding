@@ -33,6 +33,9 @@
   .chk input{ width:20px;height:20px;accent-color:var(--sage-deep);cursor:pointer; }
   .name{ flex:0 0 168px;font-size:17px;color:var(--dpink); }
   .row.done .name{ text-decoration:line-through;color:var(--ink-soft);opacity:.7; }
+  .hc{ background:var(--sage-deep);color:#fff;border-radius:10px;padding:1px 7px;font-size:11px;text-decoration:none;display:inline-block; }
+  .counts .big{ font-size:20px;color:var(--dpink); }
+  .counts .sep{ color:rgba(182,132,118,.5);margin:0 6px; }
   .dec{ color:#B04A4A;font-size:11.5px;letter-spacing:.08em;text-decoration:none;display:inline-block; }
   .row.done{ background:rgba(147,164,135,.08); }
   .row.done .remind{ display:none; }   /* reminder only shows for those who haven't confirmed */
@@ -88,6 +91,7 @@
   const GROUP_TITLES = {Wedding:"Carla's List", Family:"Family", Shane:"Shane's List", Paul:"Paul's List", Melodie:"Melodie's List", Devin:"Devin's List"};
   const CONFIRMED_SEED = ["Brendon & Jill", "Elaine & Kim", "Natasha & Partner", "Sam & Partner", "Shannon & Marc", "Warren & Megan", "Ally & Partner", "Uyanda & Partner", "Pickles & Enza", "Brian & Sharlene", "Marisa Schuller", "Janice & Kenny", "Arye & Grant", "Denise & Michael", "Neil & Justine", "Nikki & Don", "Jarred Lyfshitz & Chiara", "Sheryl Behrend", "Matthew & Partner", "Nats & Partner", "Jenny Clegg", "Oshie & Partner", "Calli & David", "Danida & Partner", "Elio & Jess", "Terri & Partner", "Barbara & Richard", "Ilana Ackerman", "Kim & Partner", "Antonette & Mark", "Candice & Joe", "Kimmy & Partner", "Melodie & Brian", "Paul & Asna", "Justin & Partner", "Gunter & Deseree", "Wetes", "Devin & Partner", "Chris & Partner", "Jarrod & Partner", "Brad & Partner", "Michael & Carla"];  // 29 accepted
   const DECLINED_SEED = ["Robby & Partner", "Jill & Selwyn", "Bernie & Rui", "Gunter-Mark & Clarice", "Ed & Irene"];  // replied: cannot attend
+  const HEADCOUNT = {"Brendon & Jill": 2, "Elaine & Kim": 2, "Natasha & Partner": 2, "Sam & Partner": 2, "Shannon & Marc": 2, "Warren & Megan": 2, "Ally & Partner": 1, "Uyanda & Partner": 2, "Pickles & Enza": 2, "Brian & Sharlene": 2, "Marisa Schuller": 1, "Janice & Kenny": 2, "Arye & Grant": 2, "Denise & Michael": 2, "Neil & Justine": 2, "Nikki & Don": 2, "Jarred Lyfshitz & Chiara": 2, "Sheryl Behrend": 1, "Matthew & Partner": 2, "Nats & Partner": 2, "Jenny Clegg": 1, "Oshie & Partner": 2, "Calli & David": 2, "Danida & Partner": 2, "Antonette & Mark": 2, "Candice & Joe": 2, "Kimmy & Partner": 1, "Melodie & Brian": 2, "Paul & Asna": 2, "Justin & Partner": 2, "Gunter & Deseree": 2, "Wetes": 1, "Devin & Partner": 2, "Chris & Partner": 2, "Jarrod & Partner": 2, "Brad & Partner": 1, "Michael & Carla": 2, "Kim & Partner": 1, "Elio & Jess": 2, "Barbara & Richard": 2, "Terri & Partner": 2, "Ilana Ackerman": 1};  // people per household
   const base=document.getElementById('base');
   const tplInvite=document.getElementById('tplInvite');
   const tplRemind=document.getElementById('tplRemind');
@@ -118,7 +122,7 @@
       const row=document.createElement('div'); row.className='row'+(confirmed[name]?' done':''); row.dataset.g=grp; row.dataset.name=name;
       row.innerHTML=
         '<label class="chk"><input type="checkbox" '+(confirmed[name]?'checked':'')+'></label>'+
-        '<div class="name">'+name+(DECLINED_SEED.includes(name)?' <span class="dec">\u2717 declined</span>':'')+'</div>'+
+        '<div class="name">'+name+(DECLINED_SEED.includes(name)?' <span class="dec">\u2717 declined</span>':(confirmed[name]&&HEADCOUNT[name]?' <span class="hc">'+HEADCOUNT[name]+'</span>':''))+'</div>'+
         '<div class="url" title="'+url+'">'+url+'</div>'+
         '<div class="btns">'+
           '<button class="copy">Copy</button>'+
@@ -154,9 +158,9 @@
   }
 
   function updateCounts(){
-    const total=GUESTS.length; let c=0,d=0;
-    GUESTS.forEach(([g,n])=>{ if(DECLINED_SEED.includes(n)) d++; else if(confirmed[n]) c++; });
-    countsEl.innerHTML='<b>'+c+'</b> accepted &middot; <b>'+d+'</b> declined &middot; <b>'+(total-c-d)+'</b> awaiting reply &middot; '+total+' invited';
+    const total=GUESTS.length; let c=0,d=0,people=0;
+    GUESTS.forEach(([g,n])=>{ if(DECLINED_SEED.includes(n)) d++; else if(confirmed[n]){ c++; people+=(HEADCOUNT[n]||0); } });
+    countsEl.innerHTML='<b class="big">'+people+'</b> guests coming <span class="sep">|</span> <b>'+c+'</b> households accepted &middot; <b>'+d+'</b> declined &middot; <b>'+(total-c-d)+'</b> awaiting reply &middot; '+total+' invited';
   }
 
   document.getElementById('groupbar').addEventListener('click', e=>{ if(!e.target.classList.contains('fbtn'))return;
