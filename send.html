@@ -57,7 +57,10 @@ button.copy,a.act{font-family:'EB Garamond',serif;font-size:13px;border-radius:8
 <p class="hint">Each green <b>WhatsApp Reminder</b> button opens WhatsApp with the personalised final reminder already prepared. Tap Send in WhatsApp to send it. The reminder page is <code>reminder-final.html</code> in the same GitHub Pages folder.</p>
 
 <label style="margin-top:16px">2 · WhatsApp reminder message</label>
-<textarea id="tplRemind">Hi {name}! 💐 The wedding is almost here! Just a final little reminder that Carla & Shane's big day is this Wednesday, 23 September. The ceremony starts at 15:00pm, so please be there by 14:30pm at the latest. We can't wait to celebrate with you! ❤️ Here's the wedding reminder with all the details: {url}. And, if you'd like to contribute towards our honeymoon, our banking details are kindly included on the page. Thank you so much! 🥂</textarea>
+<textarea id="tplRemind">Hi {name}! 💐 The wedding is almost here! Just a final little reminder that Carla & Shane's big day is this Wednesday, 23 September. The ceremony starts at 15:00pm, so please be there by 14:30pm at the latest. We can't wait to celebrate with you! ❤️ Here's the wedding reminder with all the details:
+{url}
+
+And, if you'd like to contribute towards our honeymoon, our banking details are kindly included on the page. Thank you so much! 🥂</textarea>
 </div>
 
 <div class="filterbar" id="groupbar">
@@ -102,7 +105,10 @@ function reminderUrl(name) {
   return dirOf(base.value) + 'reminder-final.html?guest=' + encodeURIComponent(name);
 }
 function waRemind(name) {
-  const m = tplRemind.value.replace(/\{\{name\}\}/g,name).replace(/\{\{url\}\}/g,reminderUrl(name));
+  const url = reminderUrl(name);
+  const m = tplRemind.value
+    .replace(/\{\{name\}\}|\{name\}/g,name)
+    .replace(/\{\{url\}\}|\{url\}/g,url);
   return 'https://wa.me/?text=' + encodeURIComponent(m);
 }
 
