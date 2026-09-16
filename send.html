@@ -99,7 +99,7 @@ function dirOf(u) {
   return u.endsWith('/') ? u : u + '/';
 }
 function reminderUrl(name) {
-  return dirOf(base.value) + 'reminder.html?guest=' + encodeURIComponent(name);
+  return dirOf(base.value) + 'reminder-final.html?guest=' + encodeURIComponent(name);
 }
 function waRemind(name) {
   const m = tplRemind.value.replace(/\{\{name\}\}/g,name).replace(/\{\{url\}\}/g,reminderUrl(name));
