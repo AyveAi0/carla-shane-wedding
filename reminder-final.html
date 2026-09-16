@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carla &amp; Shane · Final Wedding Reminder</title>
+<meta property="og:title" content="Carla &amp; Shane — The Wedding Is Almost Here">
+<meta property="og:description" content="Wednesday, 23 September 2026 · Ceremony at 3pm · Please arrive by 14:30.">
+<meta name="theme-color" content="#E7C7C4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+
+:root{--cream:#FBF4EE;--pink-soft:#E7C7C4;--pink-deep:#C2807E;--rose1:#C99A78;--rose2:#E4C2A4;--rose3:#B68476;
+--sage:#93A487;--sage-deep:#66795A;--dpink:#A2666A;--ink:#4A3F3B;--ink-soft:#6E5E58;--wa:#1FA855;--gold:#C98A3C;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'EB Garamond',serif;color:var(--ink);min-height:100vh;padding:28px 14px 70px;
+background:radial-gradient(120% 90% at 50% -10%,#FBEFEA 0%,transparent 55%),
+radial-gradient(90% 70% at 12% 8%,rgba(231,199,196,.55) 0%,transparent 45%),
+radial-gradient(90% 70% at 88% 92%,rgba(147,164,135,.40) 0%,transparent 45%),
+linear-gradient(170deg,#F7EDE6 0%,#F2E5DA 48%,#EDE4D6 100%)}
+.wrap{max-width:1050px;margin:auto}
+h1{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:42px;text-align:center;color:var(--dpink)}
+.sub{text-align:center;color:var(--ink-soft);margin:4px 0 22px}
+.panel{background:#FCF7F2;border:1px solid rgba(182,132,118,.3);border-radius:14px;padding:18px;margin-bottom:18px;box-shadow:0 10px 30px -22px rgba(102,121,90,.5)}
+label{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:6px}
+input[type=text],textarea{width:100%;padding:11px 13px;border:1px solid rgba(182,132,118,.45);border-radius:9px;font-family:'EB Garamond',serif;font-size:15px;color:var(--ink);background:#fff}
+textarea{min-height:76px;resize:vertical}
+.hint{font-size:13px;color:var(--ink-soft);margin-top:7px;line-height:1.5}
+.filterbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+.fbtn,.sbtn{font-family:'EB Garamond',serif;font-size:13px;letter-spacing:.05em;padding:8px 14px;border-radius:20px;border:1px solid rgba(182,132,118,.4);background:#FCF7F2;color:var(--rose3);cursor:pointer}
+.fbtn.active{background:var(--dpink);color:#fff;border-color:var(--dpink)}
+.sbtn.active{background:var(--sage-deep);color:#fff;border-color:var(--sage-deep)}
+.counts{text-align:center;font-size:14px;color:var(--ink-soft);margin:8px 0 16px}
+.counts b{color:var(--dpink)}
+.grp{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:25px;color:var(--sage-deep);margin:26px 4px 8px;border-bottom:1px solid rgba(147,164,135,.3);padding-bottom:6px}
+.row{display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid rgba(182,132,118,.16);flex-wrap:wrap}
+.chk{flex:0 0 auto;display:inline-flex;align-items:center;cursor:pointer}
+.chk input{width:20px;height:20px;accent-color:var(--sage-deep);cursor:pointer}
+.name{flex:1 1 240px;min-width:200px;font-size:18px;color:var(--dpink)}
+.row.sent .name{text-decoration:line-through;color:var(--ink-soft);opacity:.72}
+.hc{background:var(--sage-deep);color:#fff;border-radius:10px;padding:1px 7px;font-size:11px;text-decoration:none;display:inline-block;margin-left:5px}
+.btns{display:flex;gap:7px;flex:0 0 auto;flex-wrap:wrap}
+button.copy,a.act{font-family:'EB Garamond',serif;font-size:13px;border-radius:8px;padding:9px 13px;cursor:pointer;border:1px solid transparent;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.copy{background:#F1E5D8;color:var(--rose3);border-color:rgba(182,132,118,.4)}
+.remind{background:var(--wa);color:#fff}
+.url{flex:1 1 100%;font-size:11px;color:var(--ink-soft);background:#fff;border:1px solid rgba(182,132,118,.22);border-radius:7px;padding:6px 9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.note{font-size:12.5px;color:var(--ink-soft);text-align:center;margin-top:15px;font-style:italic;line-height:1.5}
+@media(max-width:620px){h1{font-size:36px}.name{min-width:160px}.row{gap:8px}.btns{width:100%}.btns a,.btns button{flex:1;justify-content:center}}
+
+.card{position:relative;width:100%;max-width:620px;margin:0 auto;padding:60px 48px 52px;border-radius:6px;text-align:center;overflow:hidden;
+background:radial-gradient(135% 80% at 50% 0%,rgba(246,226,192,.45) 0%,transparent 50%),linear-gradient(180deg,#FCF6F1,#F8EFE7);
+box-shadow:0 40px 80px -30px rgba(102,121,90,.35),0 18px 40px -24px rgba(194,128,126,.35)}
+.frame{position:absolute;inset:14px;border:1px solid rgba(182,132,118,.45);border-radius:3px;pointer-events:none}
+.frame:after{content:"";position:absolute;inset:5px;border:1px solid rgba(147,164,135,.30);border-radius:2px}
+.corner{position:absolute;width:92px;height:92px;opacity:.85} .corner svg{width:100%;height:100%}
+.tl{top:8px;left:8px} .tr{top:8px;right:8px;transform:scaleX(-1)} .bl{bottom:8px;left:8px;transform:scaleY(-1)} .br{bottom:8px;right:8px;transform:scale(-1,-1)}
+.content{position:relative;z-index:3} .arch{width:180px;display:block;margin:2px auto 18px}
+.rlabel{font-size:12px;letter-spacing:.4em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:14px}
+.greeting{margin:0 0 14px} .greeting-pre{display:block;font-size:12px;letter-spacing:.36em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:3px}
+.greeting-name{display:block;font-family:'Pinyon Script',cursive;font-size:42px;line-height:1.5;white-space:nowrap;padding:5px 0;color:var(--dpink)}
+.msg{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.5;color:var(--ink-soft);max-width:460px;margin:0 auto}
+.divider{display:flex;align-items:center;justify-content:center;gap:13px;margin:24px auto;max-width:280px}
+.divider .line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(182,132,118,.55),transparent)}
+.names{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;color:var(--dpink);margin:2px 0 12px}
+.details{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--sage-deep);line-height:1.55}
+.details b{font-weight:500;font-style:normal;color:var(--dpink)}
+.arrival{margin:22px auto 0;padding:15px 18px;border:1px solid rgba(194,128,126,.28);background:rgba(231,199,196,.17);border-radius:10px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;line-height:1.45;color:var(--ink-soft);max-width:470px}
+.arrival b{color:var(--dpink);font-style:normal;font-weight:500}
+.gift{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;line-height:1.55;color:var(--ink-soft);max-width:480px;margin:0 auto}
+.fund-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--sage-deep);margin-bottom:7px}
+.fund{font-size:16px;line-height:1.65;color:var(--ink-soft);background:rgba(147,164,135,.10);border:1px solid rgba(147,164,135,.25);border-radius:10px;padding:13px 15px;max-width:470px;margin:0 auto}
+.fund b{color:var(--dpink);font-weight:500}
+.closing{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;line-height:1.5;color:var(--ink-soft);max-width:460px;margin:0 auto}
+@media(max-width:520px){.card{padding:48px 26px 42px}.greeting-name{font-size:34px}.names{font-size:28px}.msg{font-size:19px}.details{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="frame"></div>
+<div class="corner tl"><svg viewBox="0 0 120 120" fill="none"><path d="M8 8 C40 20 62 44 78 80" stroke="#93A487" stroke-width="1.4" stroke-linecap="round"/><g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round"><path d="M22 18 q12 -8 22 -4 q-8 8 -22 4"/><path d="M36 34 q12 -8 22 -4 q-8 8 -22 4"/><path d="M50 52 q12 -8 22 -4 q-8 8 -22 4"/></g><circle cx="84" cy="86" r="3" fill="#C99A78"/></svg></div>
+<div class="corner tr"><svg viewBox="0 0 120 120" fill="none"><path d="M8 8 C40 20 62 44 78 80" stroke="#93A487" stroke-width="1.4" stroke-linecap="round"/><g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round"><path d="M22 18 q12 -8 22 -4 q-8 8 -22 4"/><path d="M36 34 q12 -8 22 -4 q-8 8 -22 4"/><path d="M50 52 q12 -8 22 -4 q-8 8 -22 4"/></g><circle cx="84" cy="86" r="3" fill="#C99A78"/></svg></div>
+<div class="corner bl"><svg viewBox="0 0 120 120" fill="none"><path d="M8 8 C40 20 62 44 78 80" stroke="#93A487" stroke-width="1.4" stroke-linecap="round"/><g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round"><path d="M22 18 q12 -8 22 -4 q-8 8 -22 4"/><path d="M36 34 q12 -8 22 -4 q-8 8 -22 4"/><path d="M50 52 q12 -8 22 -4 q-8 8 -22 4"/></g><circle cx="84" cy="86" r="3" fill="#C99A78"/></svg></div>
+<div class="corner br"><svg viewBox="0 0 120 120" fill="none"><path d="M8 8 C40 20 62 44 78 80" stroke="#93A487" stroke-width="1.4" stroke-linecap="round"/><g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round"><path d="M22 18 q12 -8 22 -4 q-8 8 -22 4"/><path d="M36 34 q12 -8 22 -4 q-8 8 -22 4"/><path d="M50 52 q12 -8 22 -4 q-8 8 -22 4"/></g><circle cx="84" cy="86" r="3" fill="#C99A78"/></svg></div>
+
+<div class="content">
+<svg class="arch" viewBox="0 0 300 150" fill="none">
+<path d="M30 140 C40 70 110 28 150 28 C190 28 260 70 270 140" stroke="#93A487" stroke-width="1.5" stroke-linecap="round"/>
+<g stroke="#A7B79A" stroke-width="1.2" stroke-linecap="round" fill="none"><path d="M84 70 q15 -11 29 -6 q-10 11 -29 6"/><path d="M120 48 q16 -9 30 -2 q-11 9 -30 2"/><path d="M180 48 q-16 -9 -30 -2 q11 9 30 2"/><path d="M216 70 q-15 -11 -29 -6 q10 11 29 6"/></g>
+<circle cx="150" cy="52" r="5.5" fill="#F6E2C0"/><circle cx="150" cy="52" r="11" fill="#F6E2C0" opacity=".28"/>
+</svg>
+
+<p class="rlabel">The Final Reminder</p>
+
+<div class="greeting" id="greeting" style="display:none">
+<span class="greeting-pre">Dear</span>
+<span class="greeting-name" id="greetingName"></span>
+</div>
+
+<p class="msg">The wedding is almost here, and we are so excited to celebrate this very special day with you.</p>
+
+<div class="divider"><span class="line"></span><svg width="26" height="14" viewBox="0 0 26 14" fill="none"><path d="M13 1 C9 5 4 6 1 7 C4 8 9 9 13 13 C17 9 22 8 25 7 C22 6 17 5 13 1Z" fill="#C99A78" opacity=".85"/></svg><span class="line"></span></div>
+
+<div class="names">Carla &amp; Shane</div>
+<p class="details"><b>Wednesday, 23 September 2026</b><br>Ceremony starts at <b>3pm</b><br>Via Venetto · Acorn Lane, Sandton</p>
+
+<div class="arrival">Please be there by <b>14:30 at the latest</b> so that everyone is seated and ready before the ceremony begins.</div>
+
+<div class="divider"><span class="line"></span><svg width="26" height="14" viewBox="0 0 26 14" fill="none"><path d="M13 1 C9 5 4 6 1 7 C4 8 9 9 13 13 C17 9 22 8 25 7 C22 6 17 5 13 1Z" fill="#93A487" opacity=".8"/></svg><span class="line"></span></div>
+
+<p class="fund-label">Our Honeymoon Fund</p>
+<p class="gift">Your presence is honestly the greatest gift we could ask for. As we already have a home filled with everything we need, we kindly ask for no boxed gifts. If you would like to give something, a contribution towards our honeymoon would be sincerely appreciated as we start this next chapter together.</p>
+
+<div style="height:13px"></div>
+<p class="fund"><b>Capitec</b><br>Account name: <b>SH Lossl</b><br>Account no: <b>1927489081</b><br>Account type: <b>Savings</b><br>Branch: <b>470010</b><br>Reference: <b>Your name</b></p>
+
+<div class="divider"><span class="line"></span><svg width="26" height="14" viewBox="0 0 26 14" fill="none"><path d="M13 1 C9 5 4 6 1 7 C4 8 9 9 13 13 C17 9 22 8 25 7 C22 6 17 5 13 1Z" fill="#C99A78" opacity=".85"/></svg><span class="line"></span></div>
+
+<p class="closing">Thank you for being part of our lives and for celebrating this beautiful moment with us. We can't wait to see you! ❤️</p>
+</div>
+</div>
+
+<script>
+(function(){
+const q=new URLSearchParams(location.search);
+const guest=(q.get('guest')||'').trim();
+if(guest){
+const g=document.getElementById('greeting'),nameEl=document.getElementById('greetingName');
+nameEl.textContent=guest+',';
+g.style.display='block';
+function fit(){let s=42;nameEl.style.fontSize=s+'px';const avail=g.clientWidth-6;while(nameEl.scrollWidth>avail&&s>20){s--;nameEl.style.fontSize=s+'px'}}
+fit();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);window.addEventListener('resize',fit);
+}
+})();
+</script>
+</body>
+</html>
