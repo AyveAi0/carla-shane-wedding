@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f8eee9"/><stop offset="1" stop-color="#e9dfd4"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#fff1c8" stop-opacity=".9"/><stop offset="1" stop-color="#fff1c8" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<path d="M110 760 C145 360 350 130 600 130 C850 130 1055 360 1090 760" fill="none" stroke="#93a487" stroke-width="12" stroke-linecap="round" opacity=".9"/>
+<path d="M125 760 C160 390 365 165 600 165 C835 165 1040 390 1075 760" fill="none" stroke="#c99a78" stroke-width="3" opacity=".55"/>
+<g fill="none" stroke="#a7b79a" stroke-width="6" stroke-linecap="round" opacity=".8">
+ <path d="M205 540 q55 -55 110 -18 q-50 45 -110 18"/><path d="M300 350 q65 -55 120 -8 q-55 48 -120 8"/>
+ <path d="M405 245 q60 -48 115 -4 q-52 45 -115 4"/><path d="M995 540 q-55 -55 -110 -18 q50 45 110 18"/>
+ <path d="M900 350 q-65 -55 -120 -8 q55 48 120 8"/><path d="M795 245 q-60 -48 -115 -4 q52 45 115 4"/>
+</g>
+<g>
+ <circle cx="235" cy="405" r="13" fill="#fff0c5"/><circle cx="235" cy="405" r="48" fill="url(#glow)"/>
+ <circle cx="345" cy="275" r="13" fill="#fff0c5"/><circle cx="345" cy="275" r="48" fill="url(#glow)"/>
+ <circle cx="455" cy="190" r="12" fill="#fff0c5"/><circle cx="455" cy="190" r="45" fill="url(#glow)"/>
+ <circle cx="745" cy="190" r="12" fill="#fff0c5"/><circle cx="745" cy="190" r="45" fill="url(#glow)"/>
+ <circle cx="855" cy="275" r="13" fill="#fff0c5"/><circle cx="855" cy="275" r="48" fill="url(#glow)"/>
+ <circle cx="965" cy="405" r="13" fill="#fff0c5"/><circle cx="965" cy="405" r="48" fill="url(#glow)"/>
+</g>
+<g fill="#c2807e" opacity=".7"><circle cx="180" cy="620" r="8"/><circle cx="285" cy="470" r="7"/><circle cx="390" cy="330" r="7"/><circle cx="810" cy="330" r="7"/><circle cx="915" cy="470" r="7"/><circle cx="1020" cy="620" r="8"/></g>
+<path d="M0 755 Q180 680 350 735 T700 725 T1200 750 V800 H0Z" fill="#93a487" opacity=".22"/>
+</svg>
