@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carla &amp; Shane · Final Wedding Reminder</title>
+<meta property="og:title" content="Carla &amp; Shane — The Wedding Is Almost Here">
+<meta property="og:description" content="Wednesday, 23 September 2026 · Ceremony at 15:00pm · Dress code: Smart, Casual.">
+<meta name="theme-color" content="#E7C7C4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&amp;family=EB+Garamond:ital,wght@0,400;1,400&amp;family=Pinyon+Script&amp;display=swap" rel="stylesheet">
+<style>
+:root{--pink-deep:#C2807E;--dpink:#A2666A;--ink-soft:#6E5E58}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#F2E5DA}.env-overlay{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 90% at 50% -10%,#FBEFEA 0%,transparent 55%),radial-gradient(90% 70% at 12% 8%,rgba(231,199,196,.55) 0%,transparent 45%),radial-gradient(90% 70% at 88% 92%,rgba(147,164,135,.40) 0%,transparent 45%),linear-gradient(170deg,#F7EDE6 0%,#F2E5DA 48%,#EDE4D6 100%);transition:opacity .9s ease,transform .9s ease}.env-overlay.gone{opacity:0;transform:scale(1.08);pointer-events:none}.env-stage{text-align:center;perspective:1400px;padding:20px}.ev-names{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:var(--dpink);margin-bottom:6px}.ev-sub{font-family:'EB Garamond',serif;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:24px}.envelope{position:relative;width:330px;max-width:82vw;height:222px;margin:0 auto;cursor:pointer;transform-style:preserve-3d;transition:transform .6s ease}.envelope:hover{transform:translateY(-5px)}.ev-back{position:absolute;inset:0;border-radius:11px;border:1px solid rgba(182,132,118,.5);background:linear-gradient(160deg,#f6ded7,#ead0c9);box-shadow:0 36px 66px -26px rgba(102,121,90,.5),inset 0 1px 0 rgba(255,255,255,.6)}.ev-back::before{content:"";position:absolute;left:0;right:0;bottom:0;top:34%;background:linear-gradient(160deg,#f0d5ce,#e4bfb7);clip-path:polygon(0 0,50% 66%,100% 0,100% 100%,0 100%);border-radius:0 0 11px 11px}.ev-flap{position:absolute;top:0;left:0;width:100%;height:60%;background:linear-gradient(160deg,#f1d7d0,#e7c3bb);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;transform:rotateX(0deg);backface-visibility:hidden;transition:transform 1s cubic-bezier(.6,.04,.2,1);z-index:4;border-radius:11px 11px 0 0}.env-overlay.opening .ev-flap{transform:rotateX(178deg);z-index:1}.ev-seal{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);z-index:5;width:60px;height:60px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ecc8a4,#b9837a 72%);box-shadow:0 5px 12px rgba(150,90,80,.45),inset 0 1px 2px rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;color:#fff7ef;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px}.env-overlay.opening .ev-seal{opacity:0;transform:translate(-50%,-50%) scale(.55);transition:opacity .4s ease,transform .4s ease}.ev-hint{margin-top:30px;font-family:'EB Garamond',serif;letter-spacing:.34em;text-transform:uppercase;font-size:12px;color:var(--ink-soft);animation:pulseHint 2.2s ease-in-out infinite}.env-overlay.opening .ev-hint{opacity:0;transition:opacity .3s}@keyframes pulseHint{0%,100%{opacity:.4}50%{opacity:.95}}#reminderFrame{min-height:100vh;border:0;width:100%;display:block}@media(prefers-reduced-motion:reduce){.env-overlay{display:none}}
+</style>
+</head>
+<body>
+<div class="env-overlay" id="envOverlay"><div class="env-stage"><div class="ev-names">Carla &amp; Shane</div><div class="ev-sub">You're Invited</div><div class="envelope" id="envelope"><div class="ev-back"></div><div class="ev-flap"></div><div class="ev-seal">C&amp;S</div></div><p class="ev-hint">Tap to open</p></div></div>
+<iframe id="reminderFrame" title="Carla &amp; Shane Final Wedding Reminder"></iframe>
+<script>
+(function(){
+  const q=new URLSearchParams(location.search), guest=q.get('guest')||'', frame=document.getElementById('reminderFrame'), overlay=document.getElementById('envOverlay');
+  fetch('reminder-final.html'+(guest?'?guest='+encodeURIComponent(guest):''))
+    .then(r=>r.text())
+    .then(html=>{html=html.replace('Ceremony starts at <b>15:00pm</b><br>','Ceremony starts at <b>15:00pm</b><br><b>Dress code: Smart, Casual</b><br>');const doc=frame.contentDocument;doc.open();doc.write(html);doc.close();});
+  function openInvite(){if(overlay.classList.contains('opening'))return;overlay.classList.add('opening');setTimeout(()=>overlay.classList.add('gone'),820);setTimeout(()=>{overlay.parentNode&&overlay.parentNode.removeChild(overlay)},1800)}
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches) overlay.addEventListener('click',openInvite); else overlay.remove();
+})();
+</script>
+</body>
+</html>
