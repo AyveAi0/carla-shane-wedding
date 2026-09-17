@@ -1,202 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow">
 <title>Carla &amp; Shane — Final WhatsApp Send Sheet</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&amp;family=EB+Garamond:wght@400;500&amp;display=swap" rel="stylesheet">
 <style>
-:root{--cream:#FBF4EE;--pink-soft:#E7C7C4;--pink-deep:#C2807E;--rose1:#C99A78;--rose2:#E4C2A4;--rose3:#B68476;
---sage:#93A487;--sage-deep:#66795A;--dpink:#A2666A;--ink:#4A3F3B;--ink-soft:#6E5E58;--wa:#1FA855;--gold:#C98A3C;}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'EB Garamond',serif;color:var(--ink);min-height:100vh;padding:28px 14px 70px;
-background:radial-gradient(120% 90% at 50% -10%,#FBEFEA 0%,transparent 55%),
-radial-gradient(90% 70% at 12% 8%,rgba(231,199,196,.55) 0%,transparent 45%),
-radial-gradient(90% 70% at 88% 92%,rgba(147,164,135,.40) 0%,transparent 45%),
-linear-gradient(170deg,#F7EDE6 0%,#F2E5DA 48%,#EDE4D6 100%)}
-.wrap{max-width:1050px;margin:auto}
-h1{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:42px;text-align:center;color:var(--dpink)}
-.sub{text-align:center;color:var(--ink-soft);margin:4px 0 22px}
-.panel{background:#FCF7F2;border:1px solid rgba(182,132,118,.3);border-radius:14px;padding:18px;margin-bottom:18px;box-shadow:0 10px 30px -22px rgba(102,121,90,.5)}
-label{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:6px}
-input[type=text],textarea{width:100%;padding:11px 13px;border:1px solid rgba(182,132,118,.45);border-radius:9px;font-family:'EB Garamond',serif;font-size:15px;color:var(--ink);background:#fff}
-textarea{min-height:76px;resize:vertical}
-.hint{font-size:13px;color:var(--ink-soft);margin-top:7px;line-height:1.5}
-.filterbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
-.fbtn,.sbtn{font-family:'EB Garamond',serif;font-size:13px;letter-spacing:.05em;padding:8px 14px;border-radius:20px;border:1px solid rgba(182,132,118,.4);background:#FCF7F2;color:var(--rose3);cursor:pointer}
-.fbtn.active{background:var(--dpink);color:#fff;border-color:var(--dpink)}
-.sbtn.active{background:var(--sage-deep);color:#fff;border-color:var(--sage-deep)}
-.counts{text-align:center;font-size:14px;color:var(--ink-soft);margin:8px 0 16px}
-.counts b{color:var(--dpink)}
-.grp{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:25px;color:var(--sage-deep);margin:26px 4px 8px;border-bottom:1px solid rgba(147,164,135,.3);padding-bottom:6px}
-.row{display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid rgba(182,132,118,.16);flex-wrap:wrap}
-.chk{flex:0 0 auto;display:inline-flex;align-items:center;cursor:pointer}
-.chk input{width:20px;height:20px;accent-color:var(--sage-deep);cursor:pointer}
-.name{flex:1 1 240px;min-width:200px;font-size:18px;color:var(--dpink)}
-.row.sent .name{text-decoration:line-through;color:var(--ink-soft);opacity:.72}
-.hc{background:var(--sage-deep);color:#fff;border-radius:10px;padding:1px 7px;font-size:11px;text-decoration:none;display:inline-block;margin-left:5px}
-.btns{display:flex;gap:7px;flex:0 0 auto;flex-wrap:wrap}
-button.copy,a.act{font-family:'EB Garamond',serif;font-size:13px;border-radius:8px;padding:9px 13px;cursor:pointer;border:1px solid transparent;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
-.copy{background:#F1E5D8;color:var(--rose3);border-color:rgba(182,132,118,.4)}
-.remind{background:var(--wa);color:#fff}
-.url{flex:1 1 100%;font-size:11px;color:var(--ink-soft);background:#fff;border:1px solid rgba(182,132,118,.22);border-radius:7px;padding:6px 9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.note{font-size:12.5px;color:var(--ink-soft);text-align:center;margin-top:15px;font-style:italic;line-height:1.5}
-@media(max-width:620px){h1{font-size:36px}.name{min-width:160px}.row{gap:8px}.btns{width:100%}.btns a,.btns button{flex:1;justify-content:center}}
-</style>
-</head>
-<body>
-<div class="wrap">
-<h1>Carla &amp; Shane</h1>
-<p class="sub">Final WhatsApp reminder send sheet · <span id="totalTop">144</span> households · 144 guests attending</p>
-
-<div class="panel">
-<label>1 · Website address</label>
-<input id="base" type="text" value="https://ayveai0.github.io/carla-shane-wedding/">
-<p class="hint">Each green <b>WhatsApp Reminder</b> button opens WhatsApp with the personalised final reminder already prepared. Tap Send in WhatsApp to send it. The reminder page is <code>reminder-final.html</code> in the same GitHub Pages folder.</p>
-
-<label style="margin-top:16px">2 · WhatsApp reminder message</label>
-<textarea id="tplRemind">Hi {name}! 💐 Your final wedding reminder is ready — all the details are here:
+:root{--cream:#FBF4EE;--pink-soft:#E7C7C4;--pink-deep:#C2807E;--rose1:#C99A78;--rose2:#E4C2A4;--rose3:#B68476;--sage:#93A487;--sage-deep:#66795A;--dpink:#A2666A;--ink:#4A3F3B;--ink-soft:#6E5E58;--wa:#1FA855}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'EB Garamond',serif;color:var(--ink);min-height:100vh;padding:28px 14px 70px;background:radial-gradient(120% 90% at 50% -10%,#FBEFEA 0%,transparent 55%),radial-gradient(90% 70% at 12% 8%,rgba(231,199,196,.55) 0%,transparent 45%),radial-gradient(90% 70% at 88% 92%,rgba(147,164,135,.40) 0%,transparent 45%),linear-gradient(170deg,#F7EDE6 0%,#F2E5DA 48%,#EDE4D6 100%)}
+.wrap{max-width:1050px;margin:auto}h1{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:42px;text-align:center;color:var(--dpink)}.sub{text-align:center;color:var(--ink-soft);margin:4px 0 22px}.panel{background:#FCF7F2;border:1px solid rgba(182,132,118,.3);border-radius:14px;padding:18px;margin-bottom:18px;box-shadow:0 10px 30px -22px rgba(102,121,90,.5)}label{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:6px}input[type=text],textarea{width:100%;padding:11px 13px;border:1px solid rgba(182,132,118,.45);border-radius:9px;font-family:'EB Garamond',serif;font-size:15px;color:var(--ink);background:#fff}textarea{min-height:76px;resize:vertical}.hint{font-size:13px;color:var(--ink-soft);margin-top:7px;line-height:1.5}.filterbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}.fbtn,.sbtn{font-family:'EB Garamond',serif;font-size:13px;letter-spacing:.05em;padding:8px 14px;border-radius:20px;border:1px solid rgba(182,132,118,.4);background:#FCF7F2;color:var(--rose3);cursor:pointer}.fbtn.active{background:var(--dpink);color:#fff;border-color:var(--dpink)}.sbtn.active{background:var(--sage-deep);color:#fff;border-color:var(--sage-deep)}.counts{text-align:center;font-size:14px;color:var(--ink-soft);margin:8px 0 16px}.counts b{color:var(--dpink)}.grp{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:25px;color:var(--sage-deep);margin:26px 4px 8px;border-bottom:1px solid rgba(147,164,135,.3);padding-bottom:6px}.row{display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid rgba(182,132,118,.16);flex-wrap:wrap}.chk{flex:0 0 auto;display:inline-flex;align-items:center;cursor:pointer}.chk input{width:20px;height:20px;accent-color:var(--sage-deep);cursor:pointer}.name{flex:1 1 240px;min-width:200px;font-size:18px;color:var(--dpink)}.row.sent .name{text-decoration:line-through;color:var(--ink-soft);opacity:.72}.hc{background:var(--sage-deep);color:#fff;border-radius:10px;padding:1px 7px;font-size:11px;text-decoration:none;display:inline-block;margin-left:5px}.btns{display:flex;gap:7px;flex:0 0 auto;flex-wrap:wrap}button.copy,a.act{font-family:'EB Garamond',serif;font-size:13px;border-radius:8px;padding:9px 13px;cursor:pointer;border:1px solid transparent;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}.copy{background:#F1E5D8;color:var(--rose3);border-color:rgba(182,132,118,.4)}.remind{background:var(--wa);color:#fff}.url{flex:1 1 100%;font-size:11px;color:var(--ink-soft);background:#fff;border:1px solid rgba(182,132,118,.22);border-radius:7px;padding:6px 9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.note{font-size:12.5px;color:var(--ink-soft);text-align:center;margin-top:15px;font-style:italic;line-height:1.5}@media(max-width:620px){h1{font-size:36px}.name{min-width:160px}.row{gap:8px}.btns{width:100%}.btns a,.btns button{flex:1;justify-content:center}}
+</style></head><body><div class="wrap"><h1>Carla &amp; Shane</h1><p class="sub">Final WhatsApp reminder send sheet · <span id="totalTop">144</span> households · 144 guests attending</p>
+<div class="panel"><label>1 · Website address</label><input id="base" type="text" value="https://ayveai0.github.io/carla-shane-wedding/"><p class="hint">Each green <b>WhatsApp Reminder</b> button opens WhatsApp with the personalised final reminder already prepared. Tap Send in WhatsApp to send it. The reminder page is <code>reminder-envelope.html</code> in the same GitHub Pages folder.</p><label style="margin-top:16px">2 · WhatsApp reminder message</label><textarea id="tplRemind">Hi {name}! 💐 Your final wedding reminder is ready — all the details are here:
 {url}
 
-We can't wait to celebrate with you! ❤️</textarea>
-</div>
-
-<div class="filterbar" id="groupbar">
-<button class="fbtn active" data-f="all">Everyone</button>
-<button class="fbtn" data-f="Carla">Carla's</button>
-<button class="fbtn" data-f="Family">Family</button>
-<button class="fbtn" data-f="Shane">Shane's</button>
-<button class="fbtn" data-f="Paul">Paul's</button>
-<button class="fbtn" data-f="Melodie">Melodie's</button>
-<button class="fbtn" data-f="Devin">Devin's</button>
-</div>
-<div class="filterbar" id="statusbar">
-<button class="sbtn active" data-s="all">All</button>
-<button class="sbtn" data-s="pending">⏳ Not sent</button>
-<button class="sbtn" data-s="sent">✓ Sent</button>
-</div>
-<div class="counts" id="counts"></div>
-<div id="list"></div>
-<p class="note">Tick the box after you have sent the WhatsApp reminder. Sent status is saved in this browser on this device. The green button opens WhatsApp; it does not send automatically, so you can review the message before tapping Send.</p>
-</div>
-
+We can't wait to celebrate with you! ❤️</textarea></div>
+<div class="filterbar" id="groupbar"><button class="fbtn active" data-f="all">Everyone</button><button class="fbtn" data-f="Carla">Carla's</button><button class="fbtn" data-f="Family">Family</button><button class="fbtn" data-f="Shane">Shane's</button><button class="fbtn" data-f="Paul">Paul's</button><button class="fbtn" data-f="Melodie">Melodie's</button><button class="fbtn" data-f="Devin">Devin's</button></div>
+<div class="filterbar" id="statusbar"><button class="sbtn active" data-s="all">All</button><button class="sbtn" data-s="pending">⏳ Not sent</button><button class="sbtn" data-s="sent">✓ Sent</button></div><div class="counts" id="counts"></div><div id="list"></div><p class="note">Tick the box after you have sent the WhatsApp reminder. Sent status is saved in this browser on this device. The green button opens WhatsApp; it does not send automatically, so you can review the message before tapping Send.</p></div>
 <script>
-const GUESTS = [["Carla", "Tarryn Ryan", 1], ["Carla", "Candice, Joe & Skylar", 3], ["Carla", "Sam & Saul", 2], ["Carla", "Calli & David", 2], ["Carla", "Antonette & Mark", 2], ["Carla", "Kim & Partner", 2], ["Carla", "Uyanda & Partner", 2], ["Carla", "Nats & Partner", 2], ["Carla", "Ally & Partner", 1], ["Carla", "Natasha & Partner", 2], ["Carla", "Oshie & Partner", 2], ["Carla", "Anat & Amy", 2], ["Carla", "Nikki & Don", 2], ["Carla", "Shannon & Marc", 2], ["Carla", "Kimmy the DJ", 1], ["Carla", "Candy & Chase", 2], ["Carla", "Luis & Partner", 2], ["Carla", "Dumi & Partner", 2], ["Carla", "Nikki & Marc", 2], ["Carla", "Mariah & Partner", 1], ["Carla", "Terri & Partner", 2], ["Carla", "Godfrey & Partner", 2], ["Carla", "Nandi & Partner", 2], ["Carla", "Shaun & Leanne", 2], ["Carla", "Jennifer Bettencourt", 1], ["Family", "Melodie & Brian", 2], ["Family", "Paul & Asna", 2], ["Family", "Justin & Monique", 2], ["Family", "Gunter & Deseree", 2], ["Family", "Chantell", 1], ["Family", "Angelo & Tony", 2], ["Family", "Sharlene", 1], ["Family", "Wetes, Monica & Layla", 2], ["Family", "Kaidy", 1], ["Shane", "Chris & Melissa", 2], ["Shane", "Jarrod & Saskia", 2], ["Shane", "Elio & Jess", 2], ["Shane", "Brad le Roux", 1], ["Shane", "Neil & Justine", 2], ["Shane", "Michael PH & Carla", 2], ["Shane", "Matthew PH & Partner", 2], ["Shane", "Warren & Megan", 2], ["Shane", "Don Blignaut", 1], ["Shane", "Jon Raphunga", 1], ["Shane", "Jason 'Sonny' Behan", 1], ["Paul", "Howard & Monique", 2], ["Paul", "Elaine & Kim", 2], ["Paul", "Brian & Sharlene", 2], ["Paul", "Joanne & Kenneth", 2], ["Paul", "Lauren & Craig", 2], ["Paul", "Michael & Jean", 2], ["Melodie", "Denise & Michael", 2], ["Melodie", "Marian & Michael", 2], ["Melodie", "Cindy & Adrian", 2], ["Melodie", "Pickles & Enza", 2], ["Melodie", "Debbie & Alan", 2], ["Melodie", "Ismay & David", 2], ["Melodie", "Stan and Rina", 2], ["Melodie", "Les Gritzman", 1], ["Melodie", "Lauren", 1], ["Melodie", "Jenny Clegg", 1], ["Melodie", "Yvonne Cuyler Wilson", 1], ["Melodie", "Marisa Schuller", 1], ["Melodie", "Ilana Ackerman", 1], ["Melodie", "Zahava Fissman", 1], ["Melodie", "Terry Levine", 2], ["Melodie", "Arye & Grant", 2], ["Melodie", "Janice & Kenny", 2], ["Melodie", "Brendon & Jill", 2], ["Melodie", "Barbara & Richard", 2], ["Melodie", "Sheryl Behrend", 1], ["Melodie", "Candice Hess", 1], ["Melodie", "Debbie & Brian", 2], ["Melodie", "Louise & Howard", 2], ["Melodie", "Ros & Doug", 2], ["Melodie", "Adele & Partner", 2], ["Melodie", "Hillary", 1], ["Melodie", "Bronwyn", 1], ["Melodie", "Alan Strouss", 1], ["Devin", "Devin & Partner", 2], ["Devin", "Jake Milner & Partner", 2], ["Devin", "Devin Edelstein & Kate", 2], ["Devin", "Jarred Lyfshitz", 1], ["Devin", "Daniel Shapiro & Gabi", 2]];
-const GROUP_TITLES = {"Carla": "Carla's List", "Family": "Family", "Shane": "Shane's List", "Paul": "Paul's List", "Melodie": "Melodie's List", "Devin": "Devin's List"};
-const base = document.getElementById('base');
-const tplRemind = document.getElementById('tplRemind');
-const list = document.getElementById('list');
-const countsEl = document.getElementById('counts');
-const KEY = 'cs_final_reminder_sent_v1';
-let sent = {};
-try { sent = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e) {}
-function save() { try { localStorage.setItem(KEY, JSON.stringify(sent)); } catch(e) {} }
-
-let curGroup='all', curStatus='all';
-
-function dirOf(u) {
-  u = u.trim();
-  if (/\.html?($|\?|#)/i.test(u)) return u.replace(/[^\/ ?#]*\.html?.*$/i,'');
-  return u.endsWith('/') ? u : u + '/';
-}
-function reminderUrl(name) {
-  return dirOf(base.value) + 'reminder-final.html?guest=' + encodeURIComponent(name);
-}
-function waRemind(name) {
-  const url = reminderUrl(name);
-  const m = tplRemind.value
-    .replace(/\{\{name\}\}|\{name\}/g,name)
-    .replace(/\{\{url\}\}|\{url\}/g,url);
-  return 'https://wa.me/?text=' + encodeURIComponent(m);
-}
-
-function render() {
-  list.innerHTML = '';
-  let last = null;
-  GUESTS.forEach(([grp,name,people]) => {
-    if (grp !== last) {
-      last = grp;
-      const h = document.createElement('div');
-      h.className='grp'; h.dataset.g=grp; h.textContent=GROUP_TITLES[grp] || grp;
-      list.appendChild(h);
-    }
-    const row = document.createElement('div');
-    row.className = 'row' + (sent[name] ? ' sent' : '');
-    row.dataset.g=grp; row.dataset.name=name;
-    const url = reminderUrl(name);
-    row.innerHTML =
-      '<label class="chk"><input type="checkbox" '+(sent[name]?'checked':'')+' aria-label="Mark '+escapeHtml(name)+' as sent"></label>' +
-      '<div class="name">'+escapeHtml(name)+' <span class="hc">'+people+'</span></div>' +
-      '<div class="url" title="'+escapeAttr(url)+'">'+escapeHtml(url)+'</div>' +
-      '<div class="btns">' +
-      '<button class="copy">Copy Link</button>' +
-      '<a class="act remind" target="_blank" rel="noopener" href="'+escapeAttr(waRemind(name))+'"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.2 1.1-1.7 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.3-.3.5l-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.9.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg> WhatsApp Reminder</a>' +
-      '</div>';
-    row.querySelector('input').addEventListener('change', e => {
-      if(e.target.checked) sent[name]=true; else delete sent[name];
-      save(); applyFilters();
-      row.classList.toggle('sent', !!sent[name]);
-    });
-    row.querySelector('.copy').addEventListener('click', e => {
-      navigator.clipboard.writeText(url).then(() => {
-        e.target.textContent='Copied ✓'; setTimeout(()=>e.target.textContent='Copy Link',1400);
-      }).catch(() => {
-        const t=document.createElement('textarea'); t.value=url; document.body.appendChild(t); t.select();
-        document.execCommand('copy'); t.remove(); e.target.textContent='Copied ✓';
-        setTimeout(()=>e.target.textContent='Copy Link',1400);
-      });
-    });
-    list.appendChild(row);
-  });
-  applyFilters();
-}
-
-function escapeHtml(s) {
-  return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-}
-function escapeAttr(s) { return escapeHtml(s); }
-
-function applyFilters() {
-  document.querySelectorAll('#list .row').forEach(r => {
-    const g=r.dataset.g, n=r.dataset.name, isSent=!!sent[n];
-    const gOk=curGroup==='all'||g===curGroup;
-    const sOk=curStatus==='all'||(curStatus==='sent'?isSent:!isSent);
-    r.style.display=(gOk&&sOk)?'':'none';
-  });
-  document.querySelectorAll('#list .grp').forEach(h => {
-    let n=h.nextElementSibling, any=false;
-    while(n && !n.classList.contains('grp')) {
-      if(n.classList.contains('row') && n.style.display!=='none') { any=true; break; }
-      n=n.nextElementSibling;
-    }
-    h.style.display=any?'':'none';
-  });
-  updateCounts();
-}
-
-function updateCounts() {
-  const total=GUESTS.length;
-  const done=GUESTS.filter(x=>sent[x[1]]).length;
-  countsEl.innerHTML='<b class="big">'+done+'</b> reminders sent <span class="sep">|</span> <b>'+(total-done)+'</b> remaining <span class="sep">|</span> '+total+' households';
-}
-
-document.getElementById('groupbar').addEventListener('click',e=>{
-  if(!e.target.classList.contains('fbtn'))return;
-  curGroup=e.target.dataset.f;
-  document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('active',b===e.target));
-  applyFilters();
-});
-document.getElementById('statusbar').addEventListener('click',e=>{
-  if(!e.target.classList.contains('sbtn'))return;
-  curStatus=e.target.dataset.s;
-  document.querySelectorAll('.sbtn').forEach(b=>b.classList.toggle('active',b===e.target));
-  applyFilters();
-});
-base.addEventListener('input',render);
-tplRemind.addEventListener('input',render);
-render();
-</script>
-</body>
-</html>
+const GUESTS=[["Carla","Tarryn Ryan",1],["Carla","Candice, Joe & Skylar",3],["Carla","Sam & Saul",2],["Carla","Calli & David",2],["Carla","Antonette & Mark",2],["Carla","Kim & Partner",2],["Carla","Uyanda & Partner",2],["Carla","Nats & Partner",2],["Carla","Ally & Partner",1],["Carla","Natasha & Partner",2],["Carla","Oshie & Partner",2],["Carla","Anat & Amy",2],["Carla","Nikki & Don",2],["Carla","Shannon & Marc",2],["Carla","Kimmy the DJ",1],["Carla","Candy & Chase",2],["Carla","Luis & Partner",2],["Carla","Dumi & Partner",2],["Carla","Nikki & Marc",2],["Carla","Mariah & Partner",1],["Carla","Terri & Partner",2],["Carla","Godfrey & Partner",2],["Carla","Nandi & Partner",2],["Carla","Shaun & Leanne",2],["Carla","Jennifer Bettencourt",1],["Family","Melodie & Brian",2],["Family","Paul & Asna",2],["Family","Justin & Monique",2],["Family","Gunter & Deseree",2],["Family","Chantell",1],["Family","Angelo & Tony",2],["Family","Sharlene",1],["Family","Wetes, Monica & Layla",2],["Family","Kaidy",1],["Shane","Chris & Melissa",2],["Shane","Jarrod & Saskia",2],["Shane","Elio & Jess",2],["Shane","Brad le Roux",1],["Shane","Neil & Justine",2],["Shane","Michael PH & Carla",2],["Shane","Matthew PH & Partner",2],["Shane","Warren & Megan",2],["Shane","Don Blignaut",1],["Shane","Jon Raphunga",1],["Shane","Jason 'Sonny' Behan",1],["Paul","Howard & Monique",2],["Paul","Elaine & Kim",2],["Paul","Brian & Sharlene",2],["Paul","Joanne & Kenneth",2],["Paul","Lauren & Craig",2],["Paul","Michael & Jean",2],["Melodie","Denise & Michael",2],["Melodie","Marian & Michael",2],["Melodie","Cindy & Adrian",2],["Melodie","Pickles & Enza",2],["Melodie","Debbie & Alan",2],["Melodie","Ismay & David",2],["Melodie","Stan and Rina",2],["Melodie","Les Gritzman",1],["Melodie","Lauren",1],["Melodie","Jenny Clegg",1],["Melodie","Yvonne Cuyler Wilson",1],["Melodie","Marisa Schuller",1],["Melodie","Ilana Ackerman",1],["Melodie","Zahava Fissman",1],["Melodie","Terry Levine",2],["Melodie","Arye & Grant",2],["Melodie","Janice & Kenny",2],["Melodie","Brendon & Jill",2],["Melodie","Barbara & Richard",2],["Melodie","Sheryl Behrend",1],["Melodie","Candice Hess",1],["Melodie","Debbie & Brian",2],["Melodie","Louise & Howard",2],["Melodie","Ros & Doug",2],["Melodie","Adele & Partner",2],["Melodie","Hillary",1],["Melodie","Bronwyn",1],["Melodie","Alan Strouss",1],["Devin","Devin & Partner",2],["Devin","Jake Milner & Partner",2],["Devin","Devin Edelstein & Kate",2],["Devin","Jarred Lyfshitz",1],["Devin","Daniel Shapiro & Gabi",2]];
+const GROUP_TITLES={Carla:"Carla's List",Family:"Family",Shane:"Shane's List",Paul:"Paul's List",Melodie:"Melodie's List",Devin:"Devin's List"};
+const base=document.getElementById('base'),tplRemind=document.getElementById('tplRemind'),list=document.getElementById('list'),countsEl=document.getElementById('counts'),KEY='cs_final_reminder_sent_v1';let sent={};try{sent=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}function save(){try{localStorage.setItem(KEY,JSON.stringify(sent))}catch(e){}}
+let curGroup='all',curStatus='all';
+function dirOf(u){u=u.trim();if(/\.html?($|\?|#)/i.test(u))return u.replace(/[^\/ ?#]*\.html?.*$/i,'');return u.endsWith('/')?u:u+'/'}
+function reminderUrl(name){return dirOf(base.value)+'reminder-envelope.html?guest='+encodeURIComponent(name)}
+function waRemind(name){const url=reminderUrl(name);const m=tplRemind.value.replace(/\{\{name\}\}|\{name\}/g,name).replace(/\{\{url\}\}|\{url\}/g,url);return 'https://wa.me/?text='+encodeURIComponent(m)}
+function render(){list.innerHTML='';let last=null;GUESTS.forEach(([grp,name,people])=>{if(grp!==last){last=grp;const h=document.createElement('div');h.className='grp';h.dataset.g=grp;h.textContent=GROUP_TITLES[grp]||grp;list.appendChild(h)}const row=document.createElement('div');row.className='row'+(sent[name]?' sent':'');row.dataset.g=grp;row.dataset.name=name;const url=reminderUrl(name);row.innerHTML='<label class="chk"><input type="checkbox" '+(sent[name]?'checked':'')+' aria-label="Mark '+escapeHtml(name)+' as sent"></label><div class="name">'+escapeHtml(name)+' <span class="hc">'+people+'</span></div><div class="url" title="'+escapeAttr(url)+'">'+escapeHtml(url)+'</div><div class="btns"><button class="copy">Copy Link</button><a class="act remind" target="_blank" rel="noopener" href="'+escapeAttr(waRemind(name))+'"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.2 1.1-1.7 1.2-.5.1-.9.1-1.4-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.3-.3.5l-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5 0 .6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.9.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg> WhatsApp Reminder</a></div>';row.querySelector('input').addEventListener('change',e=>{if(e.target.checked)sent[name]=true;else delete sent[name];save();applyFilters();row.classList.toggle('sent',!!sent[name])});row.querySelector('.copy').addEventListener('click',e=>{navigator.clipboard.writeText(url).then(()=>{e.target.textContent='Copied ✓';setTimeout(()=>e.target.textContent='Copy Link',1400)})});list.appendChild(row)});applyFilters()}
+function escapeHtml(s){return s.replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c]))}function escapeAttr(s){return escapeHtml(s)}
+function applyFilters(){document.querySelectorAll('#list .row').forEach(r=>{const g=r.dataset.g,n=r.dataset.name,isSent=!!sent[n],gOk=curGroup==='all'||g===curGroup,sOk=curStatus==='all'||(curStatus==='sent'?isSent:!isSent);r.style.display=(gOk&&sOk)?'':'none'});document.querySelectorAll('#list .grp').forEach(h=>{let n=h.nextElementSibling,any=false;while(n&&!n.classList.contains('grp')){if(n.classList.contains('row')&&n.style.display!=='none'){any=true;break}n=n.nextElementSibling}h.style.display=any?'':'none'});updateCounts()}
+function updateCounts(){const total=GUESTS.length,done=GUESTS.filter(x=>sent[x[1]]).length;countsEl.innerHTML='<b class="big">'+done+'</b> reminders sent <span class="sep">|</span> <b>'+(total-done)+'</b> remaining <span class="sep">|</span> '+total+' households'}
+document.getElementById('groupbar').addEventListener('click',e=>{if(!e.target.classList.contains('fbtn'))return;curGroup=e.target.dataset.f;document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('active',b===e.target));applyFilters()});document.getElementById('statusbar').addEventListener('click',e=>{if(!e.target.classList.contains('sbtn'))return;curStatus=e.target.dataset.s;document.querySelectorAll('.sbtn').forEach(b=>b.classList.toggle('active',b===e.target));applyFilters()});base.addEventListener('input',render);tplRemind.addEventListener('input',render);render();
+</script></body></html>
