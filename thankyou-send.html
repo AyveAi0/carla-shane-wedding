@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Carla &amp; Shane — Thank-You Sender</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{ --pink-deep:#C2807E;--rose3:#B68476;--sage:#93A487;--sage-deep:#66795A;--dpink:#A2666A;--ink:#4A3F3B;--ink-soft:#6E5E58;--wa:#1FA855; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{ font-family:'EB Garamond',serif;color:var(--ink);background:linear-gradient(180deg,#FBF4EE,#F4E8DD);padding:26px 14px 70px; }
+  .wrap{ max-width:960px;margin:0 auto; }
+  h1{ font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:40px;color:var(--dpink);text-align:center; }
+  .sub{ text-align:center;color:var(--ink-soft);margin:4px 0 20px;letter-spacing:.04em; }
+  .panel{ background:#FCF7F2;border:1px solid rgba(182,132,118,.3);border-radius:14px;padding:18px;margin-bottom:18px;box-shadow:0 10px 30px -22px rgba(102,121,90,.5); }
+  label{ display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:6px; }
+  input[type=text],textarea{ width:100%;padding:11px 13px;border:1px solid rgba(182,132,118,.45);border-radius:9px;font-family:'EB Garamond',serif;font-size:15px;color:var(--ink);background:#fff; }
+  textarea{ min-height:64px;resize:vertical; }
+  .hint{ font-size:13px;color:var(--ink-soft);margin-top:7px;line-height:1.5; }
+  .hint code{ background:#F1E5D8;padding:1px 6px;border-radius:5px;font-size:12px; }
+  .filterbar{ display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px; }
+  .fbtn,.sbtn{ font-family:'EB Garamond',serif;font-size:13px;letter-spacing:.05em;padding:8px 14px;border-radius:20px;border:1px solid rgba(182,132,118,.4);background:#FCF7F2;color:var(--rose3);cursor:pointer; }
+  .fbtn.active{ background:var(--dpink);color:#fff;border-color:var(--dpink); }
+  .sbtn.active{ background:var(--sage-deep);color:#fff;border-color:var(--sage-deep); }
+  .counts{ text-align:center;font-size:14px;color:var(--ink-soft);margin:6px 0 16px;letter-spacing:.02em; }
+  .counts b{ color:var(--dpink); }
+  .counts .big{ font-size:20px;color:var(--dpink); } .counts .sep{ color:rgba(182,132,118,.5);margin:0 6px; }
+  .grp{ font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--sage);margin:22px 4px 8px;border-bottom:1px solid rgba(147,164,135,.3);padding-bottom:5px; }
+  .row{ display:flex;align-items:center;gap:10px;padding:9px 4px;border-bottom:1px solid rgba(182,132,118,.16);flex-wrap:wrap; }
+  .chk{ flex:0 0 auto;display:inline-flex;align-items:center;cursor:pointer; }
+  .chk input{ width:20px;height:20px;accent-color:var(--sage-deep);cursor:pointer; }
+  .name{ flex:0 0 176px;font-size:17px;color:var(--dpink); }
+  .row.done .name{ text-decoration:line-through;color:var(--ink-soft);opacity:.7; }
+  .row.done{ background:rgba(147,164,135,.08); }
+  .row.done .thank{ display:none; }
+  .hc{ background:var(--sage-deep);color:#fff;border-radius:10px;padding:1px 7px;font-size:11px;text-decoration:none;display:inline-block; }
+  .url{ flex:1 1 240px;min-width:190px;font-size:12px;color:var(--ink-soft);background:#fff;border:1px solid rgba(182,132,118,.3);border-radius:7px;padding:8px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+  .btns{ display:flex;gap:7px;flex:0 0 auto;flex-wrap:wrap; }
+  button.copy,a.act{ font-family:'EB Garamond',serif;font-size:13px;border-radius:8px;padding:9px 12px;cursor:pointer;border:1px solid transparent;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap; }
+  .copy{ background:#F1E5D8;color:var(--rose3);border-color:rgba(182,132,118,.4); }
+  .thank{ background:var(--wa);color:#fff; }
+  .act svg{ width:15px;height:15px; }
+  .note{ font-size:12.5px;color:var(--ink-soft);text-align:center;margin-top:14px;font-style:italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Carla &amp; Shane</h1>
+  <p class="sub">Thank-you sender &middot; <span id="totalTop"></span> households who celebrated with you</p>
+
+  <div class="panel">
+    <label>1 &middot; Where the thank-you card is hosted</label>
+    <input id="base" type="text" value="https://ayveai0.github.io/carla-shane-wedding/">
+    <p class="hint">Each button opens WhatsApp with a note and that guest's personalised <code>thankyou.html</code> link. Tick a guest off once you've sent theirs &mdash; use <b>Still to thank</b> to see who's left.</p>
+
+    <label style="margin-top:16px">2 &middot; Thank-you message</label>
+    <textarea id="tpl">Hi {name}! 💛 Thank you so much for celebrating our wedding with us — and for your wonderful generosity. It meant the world. Here's a little note from us: {url}</textarea>
+  </div>
+
+  <div class="filterbar" id="groupbar">
+    <button class="fbtn active" data-f="all">Everyone</button>
+    <button class="fbtn" data-f="Wedding">Carla's</button>
+    <button class="fbtn" data-f="Family">Family</button>
+    <button class="fbtn" data-f="Shane">Shane's</button>
+    <button class="fbtn" data-f="Paul">Paul's</button>
+    <button class="fbtn" data-f="Melodie">Melodie's</button>
+    <button class="fbtn" data-f="Devin">Devin's</button>
+  </div>
+  <div class="filterbar" id="statusbar">
+    <button class="sbtn active" data-s="all">All</button>
+    <button class="sbtn" data-s="pending">⏳ Still to thank</button>
+    <button class="sbtn" data-s="done">✓ Thanked</button>
+  </div>
+  <div class="counts" id="counts"></div>
+
+  <div id="list"></div>
+  <p class="note">Tip: who you've thanked is saved in this browser on this device.</p>
+</div>
+
+<script>
+  const GUESTS = [["Wedding", "Candice & Joe"], ["Wedding", "Sam & Partner"], ["Wedding", "Calli & David"], ["Wedding", "Antonette & Mark"], ["Wedding", "Kim & Partner"], ["Wedding", "Danida & Partner"], ["Wedding", "Uyanda & Partner"], ["Wedding", "Nats & Partner"], ["Wedding", "Ally & Partner"], ["Wedding", "Natasha & Partner"], ["Wedding", "Oshie & Partner"], ["Wedding", "Anat & Amy"], ["Wedding", "Nikki & Don"], ["Wedding", "Shannon & Marc"], ["Wedding", "Kimmy & Partner"], ["Wedding", "Candy & Chase"], ["Wedding", "Luis & Partner"], ["Wedding", "Nikki & Marc"], ["Wedding", "Mariah & Partner"], ["Wedding", "Terri & Partner"], ["Wedding", "Godfrey & Partner"], ["Wedding", "Nandi & Partner"], ["Wedding", "Shaun & Leanne"], ["Wedding", "Johanne & Kenneth"], ["Wedding", "Jennifer & Partner"], ["Family", "Melodie & Brian"], ["Family", "Paul & Asna"], ["Family", "Justin & Partner"], ["Family", "Gunter & Deseree"], ["Family", "Sharlene"], ["Family", "Wetes"], ["Family", "Devin & Partner"], ["Shane", "Chris & Partner"], ["Shane", "Jarrod & Partner"], ["Shane", "Elio & Jess"], ["Shane", "Brad & Partner"], ["Shane", "Neil & Justine"], ["Shane", "Michael & Carla"], ["Shane", "Matthew & Partner"], ["Shane", "Warren & Megan"], ["Shane", "Don & Ariella"], ["Shane", "Angelo & Partner"], ["Shane", "Jon & Partner"], ["Shane", "Kgolo & Partner"], ["Shane", "Chantell & Robbie"], ["Paul", "Howard & Monique"], ["Paul", "Elaine & Kim"], ["Paul", "Brian & Sharlene"], ["Paul", "Lauren & Craig"], ["Melodie", "Denise & Michael"], ["Melodie", "Marian & Michael"], ["Melodie", "Pickles & Enza"], ["Melodie", "Debbie & Alan"], ["Melodie", "Ismay & David"], ["Melodie", "Les Gritzman"], ["Melodie", "Lauren & Dean"], ["Melodie", "Jenny Clegg"], ["Melodie", "Yvonne Cuyler Wilson"], ["Melodie", "Marisa Schuller"], ["Melodie", "Ilana Ackerman"], ["Melodie", "Zahava Fissman"], ["Melodie", "Terry Levine"], ["Melodie", "Arye & Grant"], ["Melodie", "Janice & Kenny"], ["Melodie", "Brendon & Jill"], ["Melodie", "Barbara & Richard"], ["Melodie", "Sheryl Behrend"], ["Melodie", "Candice Hess"], ["Melodie", "Debbie & Brian"], ["Melodie", "Louise & Howard"], ["Melodie", "Ros & Doug"], ["Melodie", "Adele & Partner"], ["Melodie", "Hillary & Partner"], ["Melodie", "Alan Strouss"], ["Devin", "Jake Milner & Partner"], ["Devin", "Devin Edelstein & Kate"], ["Devin", "Jarred Lyfshitz & Chiara"], ["Devin", "Daniel Shapiro & Gabi"]];
+  const HEADCOUNT = {"Candice & Joe": 2, "Sam & Partner": 2, "Calli & David": 2, "Antonette & Mark": 2, "Kim & Partner": 1, "Danida & Partner": 2, "Uyanda & Partner": 2, "Nats & Partner": 2, "Ally & Partner": 1, "Natasha & Partner": 2, "Oshie & Partner": 2, "Anat & Amy": 2, "Nikki & Don": 2, "Shannon & Marc": 2, "Kimmy & Partner": 1, "Candy & Chase": 2, "Luis & Partner": 2, "Nikki & Marc": 2, "Mariah & Partner": 1, "Terri & Partner": 2, "Godfrey & Partner": 1, "Nandi & Partner": 2, "Shaun & Leanne": 2, "Johanne & Kenneth": 2, "Jennifer & Partner": 2, "Melodie & Brian": 2, "Paul & Asna": 2, "Justin & Partner": 2, "Gunter & Deseree": 2, "Sharlene": 1, "Wetes": 1, "Devin & Partner": 2, "Chris & Partner": 2, "Jarrod & Partner": 2, "Elio & Jess": 2, "Brad & Partner": 1, "Neil & Justine": 2, "Michael & Carla": 2, "Matthew & Partner": 2, "Warren & Megan": 2, "Don & Ariella": 2, "Angelo & Partner": 2, "Jon & Partner": 1, "Kgolo & Partner": 2, "Chantell & Robbie": 1, "Howard & Monique": 2, "Elaine & Kim": 2, "Brian & Sharlene": 2, "Lauren & Craig": 2, "Denise & Michael": 2, "Marian & Michael": 2, "Pickles & Enza": 2, "Debbie & Alan": 2, "Ismay & David": 2, "Les Gritzman": 1, "Lauren & Dean": 1, "Jenny Clegg": 1, "Yvonne Cuyler Wilson": 1, "Marisa Schuller": 1, "Ilana Ackerman": 1, "Zahava Fissman": 1, "Terry Levine": 2, "Arye & Grant": 2, "Janice & Kenny": 2, "Brendon & Jill": 2, "Barbara & Richard": 2, "Sheryl Behrend": 1, "Candice Hess": 1, "Debbie & Brian": 2, "Louise & Howard": 2, "Ros & Doug": 2, "Adele & Partner": 2, "Hillary & Partner": 1, "Alan Strouss": 1, "Jake Milner & Partner": 2, "Devin Edelstein & Kate": 2, "Jarred Lyfshitz & Chiara": 2, "Daniel Shapiro & Gabi": 2};
+  const GROUP_TITLES = {Wedding:"Carla's List", Family:"Family", Shane:"Shane's List", Paul:"Paul's List", Melodie:"Melodie's List", Devin:"Devin's List"};
+  const base=document.getElementById('base');
+  const tpl=document.getElementById('tpl');
+  const list=document.getElementById('list');
+  const countsEl=document.getElementById('counts');
+  document.getElementById('totalTop').textContent=GUESTS.length;
+
+  const KEY='cs_thanked_v1';
+  let thanked={}; try{ thanked=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ thanked={}; }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(thanked)); }catch(e){} }
+  let curGroup='all', curStatus='all';
+
+  function dirOf(u){ u=u.trim(); if(/\.html?($|\?|#)/i.test(u)) return u.replace(/[^\/?#]*\.html?.*$/i,''); return u.endsWith('/')?u:u+'/'; }
+  function thankUrl(name){ return dirOf(base.value) + 'thankyou.html?guest=' + encodeURIComponent(name); }
+  function waThank(name){ const m=tpl.value.replace(/{name}/g,name).replace(/{url}/g,thankUrl(name)); return 'https://wa.me/?text='+encodeURIComponent(m); }
+
+  const WA='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.2 1.1-1.7 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.2c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.5.7 1.8.8 1.9.1.1.1.3 0 .5-.1.2-.2.3-.3.5l-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1.2-.2.7-.8.9-1.1.2-.3.4-.2.6-.1.2.1 1.5.7 1.7.9.2.1.4.2.4.3.1.1.1.6-.1 1.2z"/></svg>';
+
+  function render(){
+    list.innerHTML=''; let last=null;
+    GUESTS.forEach(([grp,name])=>{
+      if(grp!==last){ last=grp; const h=document.createElement('div'); h.className='grp'; h.dataset.g=grp; h.textContent=GROUP_TITLES[grp]||grp; list.appendChild(h); }
+      const url=thankUrl(name);
+      const row=document.createElement('div'); row.className='row'+(thanked[name]?' done':''); row.dataset.g=grp; row.dataset.name=name;
+      row.innerHTML=
+        '<label class="chk"><input type="checkbox" '+(thanked[name]?'checked':'')+'></label>'+
+        '<div class="name">'+name+(HEADCOUNT[name]?' <span class="hc">'+HEADCOUNT[name]+'</span>':'')+'</div>'+
+        '<div class="url" title="'+url+'">'+url+'</div>'+
+        '<div class="btns">'+
+          '<button class="copy">Copy</button>'+
+          '<a class="act thank" target="_blank" rel="noopener" href="'+waThank(name)+'">'+WA+'Send thank you</a>'+
+        '</div>';
+      row.querySelector('input[type=checkbox]').addEventListener('change', e=>{
+        if(e.target.checked){ thanked[name]=true; row.classList.add('done'); } else { delete thanked[name]; row.classList.remove('done'); }
+        save(); applyFilters();
+      });
+      row.querySelector('.copy').addEventListener('click', e=>{
+        navigator.clipboard.writeText(url).then(()=>{ e.target.textContent='Copied ✓'; setTimeout(()=>e.target.textContent='Copy',1400); })
+        .catch(()=>{ const t=document.createElement('textarea'); t.value=url; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); e.target.textContent='Copied ✓'; setTimeout(()=>e.target.textContent='Copy',1400); });
+      });
+      list.appendChild(row);
+    });
+    applyFilters();
+  }
+
+  function applyFilters(){
+    document.querySelectorAll('#list .row').forEach(r=>{
+      const g=r.dataset.g, name=r.dataset.name, isDone=!!thanked[name];
+      const gOk=(curGroup==='all'||g===curGroup);
+      const sOk=(curStatus==='all')||(curStatus==='done'?isDone:!isDone);
+      r.style.display=(gOk&&sOk)?'':'none';
+    });
+    document.querySelectorAll('#list .grp').forEach(h=>{
+      let n=h.nextElementSibling, any=false;
+      while(n && !n.classList.contains('grp')){ if(n.classList.contains('row') && n.style.display!=='none'){ any=true; break; } n=n.nextElementSibling; }
+      h.style.display=any?'':'none';
+    });
+    updateCounts();
+  }
+
+  function updateCounts(){
+    const total=GUESTS.length; let d=0; GUESTS.forEach(([g,n])=>{ if(thanked[n]) d++; });
+    countsEl.innerHTML='<b class="big">'+d+'</b> thanked <span class="sep">|</span> <b>'+(total-d)+'</b> still to thank &middot; '+total+' households';
+  }
+
+  document.getElementById('groupbar').addEventListener('click', e=>{ if(!e.target.classList.contains('fbtn'))return;
+    curGroup=e.target.dataset.f; document.querySelectorAll('.fbtn').forEach(b=>b.classList.toggle('active',b===e.target)); applyFilters(); });
+  document.getElementById('statusbar').addEventListener('click', e=>{ if(!e.target.classList.contains('sbtn'))return;
+    curStatus=e.target.dataset.s; document.querySelectorAll('.sbtn').forEach(b=>b.classList.toggle('active',b===e.target)); applyFilters(); });
+  base.addEventListener('input', render);
+  tpl.addEventListener('input', render);
+  render();
+</script>
+</body>
+</html>
